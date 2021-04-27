@@ -6,7 +6,7 @@ O euroPlus surgiu com a ideia de elevar o nível de sistemas industriais para a 
 O inicio começou em 2010 quando vi a necessidade de coletar dados de uma máquina para estudos futuros, como não encontrei nenhum produto industrial que cabia no
 orçamento do cliente, resolvi desenvolver uma aplicação desktop onde o cliente precisaria apenas de um computador para rodar a aplicação.
 O sistema foi se aperfeiçoando e sendo distribuido para diversas aplicações em diversas fábricas espalhadas pelo mundo. Na versão atual (4) eu decidi criar
-uma espécie de Framework para desenvolvimento rápido de aplicações industriais baseadas em PC e abrir o sistema para que todos possam utilizados. Sim agora o euroPlus
+uma espécie de Framework para desenvolvimento rápido de aplicações industriais baseadas em PC e abrir o sistema para que todos possam utiliza-lo. Sim agora o euroPlus
 é open source!
 
 ## O que esse sistema pode fazer ?
