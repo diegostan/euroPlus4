@@ -1,0 +1,243 @@
+﻿<Page x:Class="euroPlus4_1.Views.EstacoesView"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:kbrd="clr-namespace:Rife.Keyboard;assembly=Rife.Keyboard"
+      mc:Ignorable="d"
+      d:DesignHeight="698" d:DesignWidth="1146"
+      Title="EstacoesView" KeyDown="Page_KeyDown">
+
+    <Grid Height="698">
+
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="1146" Height="698">
+            <StackPanel Height="45" HorizontalAlignment="Stretch"  Width="1146" Margin="0 0 0 0"  Opacity="0.8">
+                <TextBlock Margin="10" FontSize="20" TextAlignment="Center" VerticalAlignment="Center" Foreground="White">Estações</TextBlock>
+            </StackPanel>
+
+
+            <materialDesign:TransitioningContent Padding="0" Height="653">
+                <materialDesign:TransitioningContent.OpeningEffects >
+                    <materialDesign:TransitionEffect Kind="FadeIn" Duration="0:0:0.8"/>
+                </materialDesign:TransitioningContent.OpeningEffects>
+                <Grid Margin="10">
+                    <controls:MetroAnimatedTabControl Background="{x:Null}" x:Name="menu"  controls:TabControlHelper.Underlined="TabPanel">
+                        <controls:MetroTabItem Header=" ajustes ">
+                            <StackPanel Height="584" Margin="10" Orientation="Horizontal">
+                                <StackPanel Width="900">
+                                    <TextBlock Margin="5" FontSize="20" FontWeight="SemiBold" Foreground="White">Configuração de parâmetros</TextBlock>
+                                    <StackPanel Orientation="Horizontal">
+                                        <iconPacks:PackIconMaterial Kind="Speedometer" HorizontalAlignment="Center" Margin="8" Foreground="White" Width="25" Height="25"/>
+                                        <TextBlock Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Pressões de trabalho das estações</TextBlock>
+                                    </StackPanel>
+                                    <TextBlock Margin="5" FontWeight="Light" FontSize="16" Foreground="White">Pressão máxima</TextBlock>
+                                    <controls:NumericUpDown Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"  Width="350" Height="50" UpDownButtonsWidth="50" TextAlignment="Left" Minimum="0" Maximum="200" Interval="0.1"  FontSize="26" FontWeight="Medium" HorizontalAlignment="Left" Value="{Binding Estacoes.PressaoMaxima}" GotFocus="NumericUpDown_GotFocus" LostFocus="NumericUpDown_LostFocus"></controls:NumericUpDown>
+
+                                    <TextBlock Margin="5" FontWeight="Light" FontSize="16" Foreground="White">Pressão mínima</TextBlock>
+                                    <controls:NumericUpDown Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"  Width="350" Height="50" UpDownButtonsWidth="50" TextAlignment="Left" Minimum="0" Maximum="200" Interval="0.1"  FontSize="26" FontWeight="Medium" HorizontalAlignment="Left" Value="{Binding Estacoes.PressaoMinima}" GotFocus="NumericUpDown_GotFocus" LostFocus="NumericUpDown_LostFocus"></controls:NumericUpDown>
+
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <iconPacks:PackIconMaterial HorizontalAlignment="Center" Margin="8" Kind="Counter" Foreground="White" Width="25" Height="25"/>
+                                        <TextBlock Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Número de ciclos do teste de repetição</TextBlock>
+                                    </StackPanel>
+                                    <controls:NumericUpDown Margin="0 0 0 30"  controls:TextBoxHelper.SelectAllOnFocus="True"  Width="350" Height="50" UpDownButtonsWidth="50" TextAlignment="Left" Minimum="0" Maximum="300000"  FontSize="26" FontWeight="Medium" HorizontalAlignment="Left" Value="{Binding Estacoes.NumeroDeCiclos}" GotFocus="NumericUpDown_GotFocus" LostFocus="NumericUpDown_LostFocus"></controls:NumericUpDown>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <iconPacks:PackIconModern HorizontalAlignment="Center" Margin="8" Kind="ThermometerDigital" Foreground="White" Width="25" Height="25"/>
+                                        <TextBlock Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Leituras atuais</TextBlock>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel Width="230">
+                                            <TextBlock Margin="5" FontWeight="Light" FontSize="18" Foreground="White">Pressão atual das estações:</TextBlock>
+                                          
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Margin="5" FontWeight="Medium" FontSize="18" Foreground="DarkGray" Text="{Binding LeituraPressao}"></TextBlock>
+                                            
+                                        </StackPanel>
+                                    </StackPanel>
+
+
+                                    
+
+                                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0" VerticalAlignment="Center">
+
+                                        <Button BorderThickness="0.1" Height="auto"  FontSize="16" FontWeight="Medium" Width="350" HorizontalAlignment="Left" Margin="0 0 0 0"  Opacity="0.66" Style="{DynamicResource MahApps.Styles.Button.MetroSquare.Accent}" Foreground="White" Command="{Binding EnviarValoresAjuste  }" >
+                                            <Button.Content>
+                                                <StackPanel Orientation="Horizontal" Margin="0">
+                                                    <iconPacks:PackIconModern HorizontalAlignment="Center" Margin="8" Kind="CheckmarkPencil" Foreground="White" Width="25" Height="25"/>
+                                                    <TextBlock Margin="5" VerticalAlignment="Center">Aplicar valores</TextBlock>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+                                    </StackPanel>
+
+                                </StackPanel>
+
+                                <StackPanel Width="206">
+                                    <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <materialDesign:PackIcon Kind="GaugeEmpty" Height="20" Width="20" Foreground="White" VerticalAlignment="Center"/>
+                                        <TextBlock Margin="5" FontWeight="Medium" FontSize="12" Foreground="White" VerticalAlignment="Center">Pressões de trabalho</TextBlock>
+                                    </StackPanel>
+                                    <TextBlock TextAlignment="Left" Margin="5" FontWeight="Light" FontSize="11" Foreground="White" TextWrapping="Wrap">Define a pressão máxima e mínima de trabalho quando o circuito estiver em modo de teste automático.</TextBlock>
+
+                                    <StackPanel Margin="5 20 0 0 " Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <materialDesign:PackIcon Kind="Numeric" Height="20" Width="20" Foreground="White" VerticalAlignment="Center"/>
+                                        <TextBlock Margin="5" FontWeight="Medium" FontSize="12" Foreground="White" VerticalAlignment="Center">Número de ciclos</TextBlock>
+                                    </StackPanel>
+                                    <TextBlock TextAlignment="Left" Margin="5" FontWeight="Light" FontSize="11" Foreground="White" TextWrapping="Wrap">Será a quantidade de ciclos que a estação deverá realizar, esse valor depende da frequência e intervalo do teste.</TextBlock>
+
+                                </StackPanel>
+
+                            </StackPanel>
+                        </controls:MetroTabItem>
+
+                        <controls:MetroTabItem Header=" tolerâncias ">
+                            <StackPanel Height="584" Margin="10" Orientation="Horizontal">
+                                <StackPanel Width="900">
+                                    <TextBlock Margin="5" FontSize="20" FontWeight="SemiBold" Foreground="White">Controle de tolerâncias</TextBlock>
+                                    <StackPanel Orientation="Horizontal">
+                                        <iconPacks:PackIconModern HorizontalAlignment="Center" Margin="8" Kind="GraphLineUp" Foreground="White" Width="25" Height="25"/>
+                                        <TextBlock Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Valores máximos</TextBlock>
+                                    </StackPanel>
+                                    <TextBlock Margin="5" FontWeight="Light" FontSize="16" Foreground="White">Desligar automaticamente em caso de ultrapassagem</TextBlock>
+                                    <controls:ToggleSwitch  Foreground="White" OffContent="Desativado" OnContent="Ativado" Command="{Binding EnviarValoresTolerancia}" IsOn="{Binding Estacoes.LigarMaximo}">
+                                        <controls:ToggleSwitch.Resources>
+                                            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Dark.Red.xaml" />
+                                        </controls:ToggleSwitch.Resources>
+                                    </controls:ToggleSwitch>
+
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <iconPacks:PackIconModern HorizontalAlignment="Center" Margin="8" Kind="GraphLineDown" Foreground="White" Width="25" Height="25"/>
+                                        <TextBlock  Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Valores mínimos</TextBlock>
+                                    </StackPanel>
+
+
+                                    <TextBlock Margin="5" FontWeight="Light" FontSize="16" Foreground="White">Desligar automaticamente em caso de ultrapassagem</TextBlock>
+                                    <controls:ToggleSwitch  Foreground="White" OffContent="Desativado" OnContent="Ativado" Command="{Binding EnviarValoresTolerancia}" IsOn="{Binding Estacoes.DesligarMinimo}">
+                                        <controls:ToggleSwitch.Resources>
+                                            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Dark.Red.xaml" />
+                                        </controls:ToggleSwitch.Resources>
+                                    </controls:ToggleSwitch>
+
+
+
+
+
+                                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0" VerticalAlignment="Center">
+
+                                    </StackPanel>
+
+                                </StackPanel>
+
+                                <StackPanel Width="206">
+                                    <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <iconPacks:PackIconUnicons HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Kind="ArrowsShrinkV" Foreground="White" Width="20" Height="20"/>
+                                        <TextBlock Margin="5" FontWeight="Medium" FontSize="12" Foreground="White" VerticalAlignment="Center">Configurar tolerâncias</TextBlock>
+                                    </StackPanel>
+                                    <TextBlock TextAlignment="Left" Margin="5" FontWeight="Light" FontSize="11" Foreground="White" TextWrapping="Wrap">Os valores de tolerância permitem que o sistema gerencie o espectro das variáveis controladas no sistema de temperatura além de gerar alarmes caso os valores reais ultrapassem essas tolerâncias.</TextBlock>
+
+                                </StackPanel>
+                            </StackPanel>
+                        </controls:MetroTabItem>
+
+                        <controls:MetroTabItem Header=" configurações ">
+                            <ScrollViewer Margin="0,0,-10, -10"  VerticalScrollBarVisibility="Auto" Height="auto" CanContentScroll="True" >
+                                <StackPanel Height="584" Margin="10" Orientation="Horizontal">
+                                    <StackPanel Width="900">
+                                        <TextBlock Margin="5" FontSize="20" FontWeight="SemiBold" Foreground="White">Configuração de escalonamento</TextBlock>
+                                        <StackPanel Orientation="Horizontal">
+                                            <iconPacks:PackIconMaterial HorizontalAlignment="Center" Margin="8" Kind="Scale" Foreground="White" Width="25" Height="25"/>
+                                            <TextBlock Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Escala de leitura do controlador</TextBlock>
+                                        </StackPanel>
+                                        <TextBlock Margin="5" FontWeight="Light" FontSize="16" Foreground="White">Valor máximo</TextBlock>
+                                        <controls:NumericUpDown Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"  Width="350" Height="50" UpDownButtonsWidth="50" TextAlignment="Left" Minimum="0" Maximum="100000" Value="{Binding Estacoes.EscalaMaxima}" FontSize="26" FontWeight="Medium" HorizontalAlignment="Left" GotFocus="NumericUpDown_GotFocus" LostFocus="NumericUpDown_LostFocus"></controls:NumericUpDown>
+
+                                        <TextBlock Margin="5" FontWeight="Light" FontSize="16" Foreground="White">Valor mínimo</TextBlock>
+                                        <controls:NumericUpDown Margin="0 0 0 30"  controls:TextBoxHelper.SelectAllOnFocus="True"  Width="350" Height="50" UpDownButtonsWidth="50" TextAlignment="Left" Minimum="0" Maximum="10" Value="{Binding Estacoes.EscalaMinima}" FontSize="26" FontWeight="Medium" HorizontalAlignment="Left" GotFocus="NumericUpDown_GotFocus" LostFocus="NumericUpDown_LostFocus"></controls:NumericUpDown>
+
+
+                                        <StackPanel Orientation="Horizontal">
+                                            <iconPacks:PackIconBoxIcons HorizontalAlignment="Center" Margin="8" Kind="RegularRuler" Foreground="White" Width="25" Height="25"/>
+                                            <TextBlock Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Escala de leitura de pressão (MPa)</TextBlock>
+                                        </StackPanel>
+                                        <TextBlock Margin="5" FontWeight="Light" FontSize="16" Foreground="White">Pressão máxima</TextBlock>
+                                        <controls:NumericUpDown Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"  Width="350" Height="50" UpDownButtonsWidth="50" TextAlignment="Left" Minimum="0.1" Maximum="100" Value="{Binding Estacoes.PressaoMaximaTransmissor}" FontSize="26" FontWeight="Medium" Interval="0.01" HorizontalAlignment="Left" GotFocus="NumericUpDown_GotFocus" LostFocus="NumericUpDown_LostFocus"></controls:NumericUpDown>
+
+                                        <TextBlock Margin="5" FontWeight="Light" FontSize="16" Foreground="White">Pressão mínima</TextBlock>
+                                        <controls:NumericUpDown Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"  Width="350" Height="50" UpDownButtonsWidth="50" TextAlignment="Left" Minimum="0.01"  Maximum="10" Value="{Binding Estacoes.PressaoMinimaTransmissor}"  Interval="0.01"  FontSize="26" FontWeight="Medium" HorizontalAlignment="Left" GotFocus="NumericUpDown_GotFocus" LostFocus="NumericUpDown_LostFocus"></controls:NumericUpDown>
+
+                                        <TextBlock Margin="5" FontWeight="Light" FontSize="16" Foreground="White">Selecionar unidade de medida</TextBlock>
+                                        <ComboBox Margin="0 0 0 10" ItemsSource="{Binding Estacoes.UnidadePressaoDisponivel}" SelectedIndex="{Binding Estacoes.UnidadeDePressao}"   Width="350" Height="40"  FontSize="22" FontWeight="Medium" HorizontalAlignment="Left"></ComboBox>
+
+
+
+
+
+
+                                        <StackPanel Orientation="Horizontal" Margin="0 20 0 20" VerticalAlignment="Center">
+
+                                            <Button BorderThickness="0.1" Height="auto"  FontSize="16" FontWeight="Medium" Width="350" HorizontalAlignment="Left" Margin="0 0 0 0"  Opacity="0.66" Style="{DynamicResource MahApps.Styles.Button.MetroSquare.Accent}" Command="{Binding EnviarValoresConfiguracao}" Foreground="White" >
+                                                <Button.Content>
+                                                    <StackPanel Orientation="Horizontal" Margin="0">
+                                                        <iconPacks:PackIconModern HorizontalAlignment="Center" Margin="8" Kind="CheckmarkPencil" Foreground="White" Width="25" Height="25"/>
+                                                        <TextBlock Margin="5" VerticalAlignment="Center">Aplicar valores</TextBlock>
+                                                    </StackPanel>
+                                                </Button.Content>
+                                            </Button>
+                                        </StackPanel>
+
+                                    </StackPanel>
+
+                                    <StackPanel Width="206">
+                                        <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                                            <iconPacks:PackIconMaterial HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Kind="ScaleBalance" Foreground="White" Width="20" Height="20"/>
+                                            <TextBlock Margin="5" FontWeight="Medium" FontSize="12" Foreground="White" VerticalAlignment="Center">Leitura do controlador</TextBlock>
+                                        </StackPanel>
+                                        <TextBlock TextAlignment="Left" Margin="5" FontWeight="Light" FontSize="11" Foreground="White" TextWrapping="Wrap">Deve-se inserir o valor máximo e mínimo que o controlador fornece na entrada quando o sensor de pressão estiver no máximo e mínimo respectivamente, caso necessite de um offset para melhorar a precisão, o mesmo poderá ser realizado usando simples calculo de escalonamento.</TextBlock>
+
+                                        <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                                            <iconPacks:PackIconUnicons HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Kind="Ruler" Foreground="White" Width="20" Height="20"/>
+                                            <TextBlock Margin="5" FontWeight="Medium" FontSize="12" Foreground="White" VerticalAlignment="Center">Leitura de pressão</TextBlock>
+                                        </StackPanel>
+                                        <TextBlock TextAlignment="Left" Margin="5" FontWeight="Light" FontSize="11" Foreground="White" TextWrapping="Wrap">O valor de escalonagem de pressão irá definir qual será o máximo e mínimo convertido pelo valor recebido do controlador, lembrando que esses valores sempre deverão seguir as unidades do sistema internacional de medidas.</TextBlock>
+
+                                        <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                                            <iconPacks:PackIconFontAwesome HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Kind="ListOlSolid" Foreground="White" Width="20" Height="20"/>
+                                            <TextBlock Margin="5" FontWeight="Medium" FontSize="12" Foreground="White" VerticalAlignment="Center">Unidades de medida</TextBlock>
+                                        </StackPanel>
+                                        <TextBlock TextAlignment="Left" Margin="5" FontWeight="Light" FontSize="11" Foreground="White" TextWrapping="Wrap">Selecione a unidade de medida a ser utilizada pelo sistema, leituras e campos de edição irão respeitar essas unidades.</TextBlock>
+
+                                    </StackPanel>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </controls:MetroTabItem>
+
+
+
+
+                    </controls:MetroAnimatedTabControl>
+                </Grid>
+
+            </materialDesign:TransitioningContent>
+
+        </StackPanel>
+        <controls:FlyoutsControl  Width="1146">
+            <controls:Flyout Position="Top" IsAutoCloseEnabled="True" AutoCloseInterval="3000" Height="45"  IsOpen="{Binding MostrarMensagem}" CloseButtonVisibility="Collapsed">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <iconPacks:PackIconFeatherIcons HorizontalAlignment="Center" Margin="0 0 10 0" Kind="CheckCircle" Foreground="{DynamicResource MahApps.Brushes.Accent}" Width="20" Height="20"/>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Text="{Binding ConteudoMensagem}"></TextBlock>
+                </StackPanel>
+
+            </controls:Flyout>
+        </controls:FlyoutsControl>
+
+
+    </Grid>
+</Page>

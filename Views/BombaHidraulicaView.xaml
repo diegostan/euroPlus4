@@ -1,0 +1,171 @@
+﻿<Page x:Class="euroPlus4_1.Views.BombaHidraulicaView"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:kbrd="clr-namespace:Rife.Keyboard;assembly=Rife.Keyboard"
+      mc:Ignorable="d"
+      d:DesignHeight="698" d:DesignWidth="1146"
+      Title="BombaHidraulica">
+
+    <Grid Height="698">
+
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="1146" Height="698">
+            <StackPanel Height="45" HorizontalAlignment="Stretch"  Width="1146" Margin="0 0 0 0"  Opacity="0.8">
+                <TextBlock Margin="10" FontSize="20" TextAlignment="Center" VerticalAlignment="Center" Foreground="White">Bomba hidráulica</TextBlock>
+            </StackPanel>
+
+
+            <materialDesign:TransitioningContent Padding="0" Height="653">
+                <materialDesign:TransitioningContent.OpeningEffects >
+                    <materialDesign:TransitionEffect Kind="FadeIn" Duration="0:0:0.8"/>
+                </materialDesign:TransitioningContent.OpeningEffects>
+                <Grid Margin="10">
+                    <controls:MetroAnimatedTabControl Background="{x:Null}" x:Name="menu" controls:TabControlHelper.Underlined="TabPanel">
+                        <controls:MetroTabItem Header=" ajustes ">
+                            <StackPanel Height="584" Margin="10" Orientation="Horizontal">
+                                <StackPanel Width="900">
+                                    <TextBlock Margin="5" FontSize="20" FontWeight="SemiBold" Foreground="White">Controle de fluxo</TextBlock>
+                                    <StackPanel Orientation="Horizontal">
+                                        <iconPacks:PackIconFeatherIcons HorizontalAlignment="Center" Margin="8" Kind="Sliders" Foreground="White" Width="25" Height="25"/>
+                                        <TextBlock Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Definir percentual de vazão</TextBlock>
+                                    </StackPanel>
+                                    <Slider Width="350" Height="50" HorizontalAlignment="Left" Maximum="100" Minimum="0" Margin="0 10 0 10" TickPlacement="TopLeft" TickFrequency="5" Value="{Binding BombaHidraulica.PercentualDeVazão}"></Slider>
+
+                                    <controls:NumericUpDown Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"  Width="350" Height="50" UpDownButtonsWidth="50" TextAlignment="Left" Minimum="0" Maximum="100"  FontSize="26" FontWeight="Medium" HorizontalAlignment="Left" Value="{Binding BombaHidraulica.PercentualDeVazão}" GotFocus="NumericUpDown_GotFocus" LostFocus="NumericUpDown_LostFocus"></controls:NumericUpDown>
+                                    <StackPanel Orientation="Horizontal" Margin="-8 5 0 10">
+                                        <iconPacks:PackIconFeatherIcons HorizontalAlignment="Center" Margin="8" Kind="AlertCircle" Foreground="Gray" Width="23" Height="23" VerticalAlignment="Center"/>
+                                        <TextBlock Margin="0 0 0 0" MaxWidth="320" TextWrapping="Wrap" HorizontalAlignment="Left" FontWeight="Light" FontSize="14" Foreground="Gray" VerticalAlignment="Center">Os valores de controle de fluxo da bomba  só poderão ser aplicados em modo manual de operação.</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <iconPacks:PackIconModern HorizontalAlignment="Center" Margin="8" Kind="GraphLine" Foreground="White" Width="25" Height="25"/>
+                                        <TextBlock Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Estado atual da  bomba</TextBlock>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel Width="230">
+                                            <TextBlock Margin="5" FontWeight="Light" FontSize="18" Foreground="White">Vazão atual da bomba:</TextBlock>
+                                            <TextBlock Margin="5" FontWeight="Light" FontSize="18" Foreground="White">Frequência do inversor:</TextBlock>
+                                            <TextBlock Margin="5" FontWeight="Light" FontSize="18" Foreground="White">Corrente de saída:</TextBlock>
+                                            <TextBlock Margin="5" FontWeight="Light" FontSize="18" Foreground="White">Saída de controle:</TextBlock>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Margin="5" FontWeight="Medium" FontSize="18" Foreground="DarkGray" Text="{Binding BombaHidraulica.LeituraVazaoAtual}"></TextBlock>
+                                            <TextBlock Margin="5" FontWeight="Medium" FontSize="18" Foreground="DarkGray" Text="{Binding BombaHidraulica.LeituraFrequenciaAtual}"></TextBlock>
+                                            <TextBlock Margin="5" FontWeight="Medium" FontSize="18" Foreground="DarkGray">-- A</TextBlock>
+                                            <TextBlock Margin="5" FontWeight="Medium" FontSize="18" Foreground="DarkGray" Text="{Binding BombaHidraulica.LeituraTensaoControleAtual}"></TextBlock>
+                                        </StackPanel>
+                                    </StackPanel>
+
+
+                                    
+
+                                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0" VerticalAlignment="Center">
+
+                                        <Button BorderThickness="0.1" Height="auto"  FontSize="16" FontWeight="Medium" Width="350" HorizontalAlignment="Left" Margin="0 0 0 0"  Opacity="0.66" Style="{DynamicResource MahApps.Styles.Button.MetroSquare.Accent}" Foreground="White" Command="{Binding EnviarPercentualVazao}" >
+                                            <Button.Content>
+                                                <StackPanel Orientation="Horizontal" Margin="0">
+                                                    <iconPacks:PackIconModern HorizontalAlignment="Center" Margin="8" Kind="CheckmarkPencil" Foreground="White" Width="25" Height="25"/>
+                                                    <TextBlock Margin="5" VerticalAlignment="Center">Aplicar valores</TextBlock>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+                                    </StackPanel>
+
+                                </StackPanel>
+
+                                <StackPanel Width="206">
+                                    <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <materialDesign:PackIcon Kind="Pump" Height="20" Width="20" Foreground="White" VerticalAlignment="Center"/>
+                                        <TextBlock Margin="5" FontWeight="Medium" FontSize="12" Foreground="White" VerticalAlignment="Center">Controle de fluxo</TextBlock>
+                                    </StackPanel>
+                                    <TextBlock TextAlignment="Left" Margin="5" FontWeight="Light" FontSize="11" Foreground="White" TextWrapping="Wrap">Controle o percentual de fluxo do motor da bomba utilizando um slide, editando manualmente com o teclado virtual ou com os botões ao lado do campo.</TextBlock>
+
+                                    <StackPanel Margin="5 20 0 0 " Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <materialDesign:PackIcon Kind="ViewDashboard" Height="20" Width="20" Foreground="White" VerticalAlignment="Center"/>
+                                        <TextBlock Margin="5" FontWeight="Medium" FontSize="12" Foreground="White" VerticalAlignment="Center">Dashboard</TextBlock>
+                                    </StackPanel>
+                                    <TextBlock TextAlignment="Left" Margin="5" FontWeight="Light" FontSize="11" Foreground="White" TextWrapping="Wrap">Apresente os dados de frequência, vazão atual entre outros na tela de visão geral.</TextBlock>
+
+                                </StackPanel>
+
+                            </StackPanel>
+                        </controls:MetroTabItem>
+                        <controls:MetroTabItem Header=" configurações ">
+                            <StackPanel Height="584" Margin="10" Orientation="Horizontal">
+                                <StackPanel Width="900">
+                                    <TextBlock Margin="5" FontSize="20" FontWeight="SemiBold" Foreground="White">Configuração de extremos</TextBlock>
+                                    <StackPanel Orientation="Horizontal">
+                                        <iconPacks:PackIconModern HorizontalAlignment="Center" Margin="8" Kind="GraphLineUp" Foreground="White" Width="25" Height="25"/>
+                                        <TextBlock Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Valores máximos</TextBlock>
+                                    </StackPanel>
+                                    <TextBlock Margin="5" FontWeight="Light" FontSize="16" Foreground="White">Vazão máxima da bomba (L/Min)</TextBlock>
+                                    <controls:NumericUpDown Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"  Width="350" Height="50" UpDownButtonsWidth="50" TextAlignment="Left" Minimum="0" Maximum="100" Value="{Binding BombaHidraulica.VazaoMaximaBomba}" FontSize="26" FontWeight="Medium" HorizontalAlignment="Left" GotFocus="NumericUpDown_GotFocus" LostFocus="NumericUpDown_LostFocus"></controls:NumericUpDown>
+
+                                    <TextBlock Margin="5" FontWeight="Light" FontSize="16" Foreground="White">Frequência máxima da bomba (Hertz)</TextBlock>
+                                    <controls:NumericUpDown Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"  Width="350" Height="50" UpDownButtonsWidth="50" TextAlignment="Left" Minimum="0" Maximum="400" Value="{Binding BombaHidraulica.FrequenciaMaximaBomba}" FontSize="26" FontWeight="Medium" HorizontalAlignment="Left" GotFocus="NumericUpDown_GotFocus" LostFocus="NumericUpDown_LostFocus"></controls:NumericUpDown>
+
+                                    <TextBlock Margin="5" FontWeight="Light" FontSize="16" Foreground="White">Tensão de controle máxima da bomba (mV)</TextBlock>
+                                    <controls:NumericUpDown Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"  Width="350" Height="50" UpDownButtonsWidth="50" TextAlignment="Left" Minimum="0" Maximum="10000" Value="{Binding BombaHidraulica.TensaoControleMaxima}" FontSize="26" FontWeight="Medium" HorizontalAlignment="Left" GotFocus="NumericUpDown_GotFocus" LostFocus="NumericUpDown_LostFocus"></controls:NumericUpDown>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <iconPacks:PackIconModern HorizontalAlignment="Center" Margin="8" Kind="GraphLineDown" Foreground="White" Width="25" Height="25"/>
+                                        <TextBlock Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Valores mínimos</TextBlock>
+                                    </StackPanel>
+                                    <TextBlock Margin="5" FontWeight="Light" FontSize="16" Foreground="White">Tensão de controle mínima da bomba (mV)</TextBlock>
+                                    <controls:NumericUpDown Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"  Width="350" Height="50" UpDownButtonsWidth="50" TextAlignment="Left" Minimum="0" Maximum="1000" Value="{Binding BombaHidraulica.TensaoControleMinima}" FontSize="26" FontWeight="Medium" HorizontalAlignment="Left" GotFocus="NumericUpDown_GotFocus" LostFocus="NumericUpDown_LostFocus"></controls:NumericUpDown>
+
+
+
+
+
+                                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0" VerticalAlignment="Center">
+
+                                        <Button BorderThickness="0.1" Height="auto"  FontSize="16" FontWeight="Medium" Width="350" HorizontalAlignment="Left" Margin="0 0 0 0"  Opacity="0.66" Style="{DynamicResource MahApps.Styles.Button.MetroSquare.Accent}" Foreground="White" Command="{Binding EnviarConfiguracaoBomba}" >
+                                            <Button.Content>
+                                                <StackPanel Orientation="Horizontal" Margin="0">
+                                                    <iconPacks:PackIconModern HorizontalAlignment="Center" Margin="8" Kind="CheckmarkPencil" Foreground="White" Width="25" Height="25"/>
+                                                    <TextBlock Margin="5" VerticalAlignment="Center">Aplicar valores</TextBlock>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+                                    </StackPanel>
+
+                                </StackPanel>
+
+                                <StackPanel Width="206">
+                                    <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <materialDesign:PackIcon Kind="UploadMultiple" Height="20" Width="20" Foreground="White" VerticalAlignment="Center"/>
+                                        <TextBlock Margin="5" FontWeight="Medium" FontSize="12" Foreground="White" VerticalAlignment="Center">Configurar extremos</TextBlock>
+                                    </StackPanel>
+                                    <TextBlock TextAlignment="Left" Margin="5" FontWeight="Light" FontSize="11" Foreground="White" TextWrapping="Wrap">Forneceça as informações de valores máximos e mínimos do equipamento bem como o controle da saída analógica do controlador.</TextBlock>
+
+                                </StackPanel>
+                            </StackPanel>
+                        </controls:MetroTabItem>
+
+
+
+
+                    </controls:MetroAnimatedTabControl>
+                </Grid>
+
+            </materialDesign:TransitioningContent>
+
+        </StackPanel>
+        <controls:FlyoutsControl  Width="1146">
+            <controls:Flyout Background="{DynamicResource MahApps.Brushes.Control.Background}" Position="Top" IsAutoCloseEnabled="True" AutoCloseInterval="3000" Height="45"  IsOpen="{Binding MostrarMensagem}" CloseButtonVisibility="Collapsed">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Background="{DynamicResource MahApps.Brushes.Control.Background}" >
+                    <iconPacks:PackIconFeatherIcons HorizontalAlignment="Center" Margin="0 0 10 0" Kind="AlertCircle" Foreground="{DynamicResource MahApps.Brushes.Accent}" Width="20" Height="20"/>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Text="{Binding ConteudoMensagem}"></TextBlock>
+                </StackPanel>
+
+            </controls:Flyout>
+        </controls:FlyoutsControl>
+
+      
+    </Grid>
+</Page>

@@ -1,0 +1,295 @@
+﻿<Page x:Class="euroPlus4_1.Views.VisaoGeralView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:kbrd="clr-namespace:Rife.Keyboard;assembly=Rife.Keyboard"
+      mc:Ignorable="d"
+      d:DesignHeight="698" d:DesignWidth="1146"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      Title="VisaoGeralView">
+
+
+
+
+    <Grid >
+        
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="1146" Height="698" >
+
+            <StackPanel Height="45" HorizontalAlignment="Stretch"  Width="500"   Opacity="1">
+                <TextBlock Margin="10" FontSize="20" TextAlignment="Center" VerticalAlignment="Center" Foreground="White">Visão geral</TextBlock>
+            </StackPanel>
+
+
+            <materialDesign:TransitioningContent Padding="0" Height="653">
+                <materialDesign:TransitioningContent.OpeningEffects>
+                    <materialDesign:TransitionEffect Kind="FadeIn" Duration="0:0:0.8"/>
+                </materialDesign:TransitioningContent.OpeningEffects>
+                <Grid Margin="10">
+
+                    <StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10">
+                        <materialDesign:Card Height="120" Width="260" Margin="0 0 20 0" UniformCornerRadius="5">
+                            <materialDesign:Card.Background>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#FFBF22CD"/>
+                                    <GradientStop Color="#FFE900FF" Offset="1"/>
+                                </RadialGradientBrush>
+                            </materialDesign:Card.Background>
+                            <StackPanel Margin="5">
+                                <TextBlock Foreground="White" FontSize="18" Margin="0">Pressão atual estações</TextBlock>
+                                <Grid Margin="5">
+                                        <iconPacks:PackIconBoxIcons Kind="RegularStation" Padding="0" VerticalAlignment="Center" Foreground="White" Height="40" Width="40"/>
+                                        <TextBlock Text="{Binding VisaoGeral.PressaoAtualEstacoes}" FontSize="28" FontWeight="Medium" Foreground="White" HorizontalAlignment="Right"></TextBlock>
+                                </Grid>
+
+                                <Grid Width="240">
+                                    <TextBlock Foreground="White" HorizontalAlignment="Left">Pressão máxima selecionada</TextBlock>
+                                        <TextBlock Foreground="White" HorizontalAlignment="Right" Text="{Binding VisaoGeral.PressaoMaximaSelecionada}"></TextBlock>
+                                </Grid>
+
+
+                                <Grid Width="240">
+                                    <TextBlock Foreground="White" HorizontalAlignment="Left">Pressão mínima selecionada</TextBlock>
+                                        <TextBlock Foreground="White" HorizontalAlignment="Right" Text="{Binding VisaoGeral.PressaoMinimaSelecionada}"></TextBlock>
+                                </Grid>
+
+
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card Height="120" Width="260" Margin="0 0 20 0"  UniformCornerRadius="5">
+                            <materialDesign:Card.Background>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#FFC93737"/>
+                                    <GradientStop Color="#FFFF1D1D" Offset="1"/>
+                                </RadialGradientBrush>
+                            </materialDesign:Card.Background>
+                            <StackPanel Margin="5">
+                                <TextBlock Foreground="White" FontSize="18" Margin="0">Temperaturas (fluido-câmara)</TextBlock>
+                                <Grid  Margin="5">
+                                    <iconPacks:PackIconModern Kind="ThermometerCelcius" VerticalAlignment="Center" Foreground="White" Width="40" Height="40"/>
+                                    <TextBlock Text="{Binding VisaoGeral.Temperaturas}" FontSize="28" FontWeight="Medium" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center"></TextBlock>
+                                </Grid>
+
+                                <Grid Width="240">
+                                    <TextBlock Foreground="White" HorizontalAlignment="Left">Ajuste para o fluido</TextBlock>
+                                        <TextBlock Foreground="White" HorizontalAlignment="Right" Text="{Binding VisaoGeral.AjusteParaFluido}"></TextBlock>
+                                </Grid>
+
+
+                                <Grid Width="240">
+                                    <TextBlock Foreground="White" HorizontalAlignment="Left">Ajuste para câmara</TextBlock>
+                                        <TextBlock Foreground="White" HorizontalAlignment="Right" Text="{Binding VisaoGeral.AjusteParaCamara}"></TextBlock>
+                                </Grid>
+
+
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card Height="120" Width="260" Margin="0 0 20 0"  UniformCornerRadius="5">
+                            <materialDesign:Card.Background>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#FF3D7FDE"/>
+                                    <GradientStop Color="#FF0068FF" Offset="1"/>
+                                </RadialGradientBrush>
+                            </materialDesign:Card.Background>
+                            <StackPanel Margin="5">
+                                <TextBlock Foreground="White" FontSize="16" Margin="2">Bomba hidráulica</TextBlock>
+                                <Grid  Margin="5">
+                                    <iconPacks:PackIconMaterial Kind="Pump" Padding="0" VerticalAlignment="Center" Foreground="White" Height="40" Width="40"/>
+                                    <TextBlock Text="{Binding VisaoGeral.EstadoDaBomba}" FontSize="28" FontWeight="Medium" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center"></TextBlock>
+                                </Grid>
+
+                                <Grid Width="240">
+                                    <TextBlock Foreground="White" HorizontalAlignment="Left">Ajuste de vazão</TextBlock>
+                                        <TextBlock Foreground="White" HorizontalAlignment="Right" Text="{Binding VisaoGeral.AjusteVazao}"></TextBlock>
+                                </Grid>
+
+
+                                <Grid Width="240">
+                                    <TextBlock Foreground="White" HorizontalAlignment="Left">Ajuste máximo de pressão</TextBlock>
+                                        <TextBlock Foreground="White" HorizontalAlignment="Right" Text="{Binding VisaoGeral.AjusteMaximoPressao}"></TextBlock>
+                                </Grid>
+
+
+                            </StackPanel>
+
+                        </materialDesign:Card>
+                        <materialDesign:Card Height="120" Width="260" Margin="0 0 0 0"  UniformCornerRadius="5">
+                            <materialDesign:Card.Background>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#FF08B64F"/>
+                                    <GradientStop Color="#FF048F2A" Offset="1"/>
+                                </RadialGradientBrush>
+                            </materialDesign:Card.Background>
+                            <StackPanel Margin="5">
+                                <TextBlock Foreground="White" FontSize="16" Margin="2">Ciclos de repetição</TextBlock>
+                                <Grid  Margin="5">
+                                    <iconPacks:PackIconMaterial Kind="AvTimer" Padding="0" VerticalAlignment="Center" Foreground="White" Height="40" Width="40"/>
+                                        <TextBlock Text="{Binding VisaoGeral.QuantidadeCiclosRealizados}" FontSize="28" FontWeight="Medium" Foreground="White" HorizontalAlignment="Right"></TextBlock>
+                                </Grid>
+
+                                <Grid Width="240">
+                                    <TextBlock Foreground="White" HorizontalAlignment="Left">Ajuste frequência</TextBlock>
+                                        <TextBlock Foreground="White" HorizontalAlignment="Right" Text="{Binding VisaoGeral.AjusteFrequencia}"></TextBlock>
+                                </Grid>
+
+
+                                <Grid Width="240">
+                                    <TextBlock Foreground="White" HorizontalAlignment="Left">Quantidade de ciclos</TextBlock>
+                                        <TextBlock Foreground="White" HorizontalAlignment="Right" Text="{Binding VisaoGeral.QuantidadeCiclos}"></TextBlock>
+                                </Grid>
+
+
+                            </StackPanel>
+                        </materialDesign:Card>
+                        
+                    </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Margin="10 10 15 0">
+                                <materialDesign:Card Background="{DynamicResource MahApps.Brushes.Control.Background}" Height="300" Width="540" UniformCornerRadius="5" HorizontalAlignment="Left">
+                                <StackPanel>
+                                    <TextBlock Margin="5" Foreground="Gray">Curva de pressão</TextBlock>
+                                        <lvc:CartesianChart  Margin="10" Height="250" Width="auto" AnimationsSpeed="0:0:0.05" DisableAnimations="False">
+                                            <lvc:CartesianChart.Series>
+                                                <lvc:LineSeries Title="Pressão" Values="{Binding GraficoPressao}" PointGeometrySize="2">
+                                                    <lvc:LineSeries.Fill>
+                                                        <SolidColorBrush Color="#FF369DF3" Opacity="0.15"/>
+                                                    </lvc:LineSeries.Fill>
+                                                </lvc:LineSeries>
+                                            </lvc:CartesianChart.Series>
+                                        </lvc:CartesianChart>
+                                </StackPanel>
+                            </materialDesign:Card>
+                        </StackPanel>
+                        <StackPanel Margin="10">
+                                <materialDesign:Card Background="{DynamicResource MahApps.Brushes.Control.Background}" Height="300" Width="540" UniformCornerRadius="5" HorizontalAlignment="Left">
+                                <StackPanel>
+                                    <TextBlock Margin="5" Foreground="Gray">Curva de temperatura</TextBlock>
+                                        <lvc:CartesianChart  Margin="10" Height="250" Width="auto" AnimationsSpeed="0:0:0.05" DisableAnimations="False">
+                                            <lvc:CartesianChart.Series>
+                                                <lvc:LineSeries Title="Estação" Values="{Binding GraficoEstacao}" Stroke="#FFFF4545"  PointGeometrySize="2">
+                                                    <lvc:LineSeries.Fill>
+                                                        <SolidColorBrush Color="#FFFF4F4F" Opacity="0.15"/>
+                                                    </lvc:LineSeries.Fill>
+                                                </lvc:LineSeries>
+                                                <lvc:LineSeries Title="Camara" Values="{Binding GraficoCamara}" Stroke="#FFFF00F3" PointGeometrySize="2">
+                                                    <lvc:LineSeries.Fill>
+                                                        <SolidColorBrush Color="#FFF708F7" Opacity="0.15"/>
+                                                    </lvc:LineSeries.Fill>
+                                                </lvc:LineSeries>
+                                            </lvc:CartesianChart.Series>
+                                            
+                                        </lvc:CartesianChart>
+                                    </StackPanel>
+                            </materialDesign:Card>
+                        </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Margin="10">
+                                
+                                <materialDesign:Card Background="{DynamicResource MahApps.Brushes.Control.Background}"  HorizontalAlignment="Left" UniformCornerRadius="5">
+                                    <StackPanel>
+                                        <TextBlock Margin="3" Foreground="Gray">Pressão atual</TextBlock>
+                                    <StackPanel Orientation="Horizontal">
+                                            <lvc:AngularGauge FontFamily="Segoe UI" Height="120" Width="157" ToValue="{Binding VisaoGeral.PressaoMaximaGauge}" Margin="5" Value="{Binding VisaoGeral.Pressao}">
+                                            <lvc:AngularGauge.Sections>
+                                                    <lvc:AngularSection FromValue="0" ToValue="{Binding VisaoGeral.PressaoMaximaGauge}" Fill="{DynamicResource MahApps.Brushes.Accent}"/>
+                                                </lvc:AngularGauge.Sections>
+                                        </lvc:AngularGauge>
+                                    </StackPanel>
+                                    </StackPanel>
+                                </materialDesign:Card>
+                            
+                             </StackPanel>
+                            <StackPanel Margin="10">
+
+                                <materialDesign:Card Background="{DynamicResource MahApps.Brushes.Control.Background}"  HorizontalAlignment="Left" UniformCornerRadius="5">
+                                    <StackPanel>
+                                        <TextBlock Margin="3" Foreground="Gray">Vazão atual</TextBlock>
+                                        <StackPanel Orientation="Horizontal">
+                                            <lvc:AngularGauge FontFamily="Segoe UI" Height="120" Width="157" ToValue="{Binding VisaoGeral.VazaoMaximaGauge}" Margin="5"  Value="{Binding VisaoGeral.Vazao}">
+                                                <lvc:AngularGauge.Sections>
+                                                    <lvc:AngularSection FromValue="0" ToValue="{Binding VisaoGeral.VazaoMaximaGauge}" Fill="{DynamicResource MahApps.Brushes.Accent}"/>
+                                                </lvc:AngularGauge.Sections>
+                                            </lvc:AngularGauge>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </materialDesign:Card>
+
+                            </StackPanel>
+                            <StackPanel Margin="10">
+
+                                <materialDesign:Card Background="{DynamicResource MahApps.Brushes.Control.Background}"  HorizontalAlignment="Left" UniformCornerRadius="5">
+                                    <StackPanel>
+                                        <TextBlock Margin="3" Foreground="Gray">Frequência do inversor</TextBlock>
+                                        <StackPanel Orientation="Horizontal">
+                                            <lvc:Gauge Height="120" Width="157" ToColor="{DynamicResource MahApps.Colors.Accent}" To="{Binding VisaoGeral.FrequenciaMaxima}" Value="{Binding VisaoGeral.FrequenciaAtual}" Margin="5"></lvc:Gauge>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </materialDesign:Card>
+
+                            </StackPanel>
+
+                            <StackPanel Margin="15 10 0 10">
+                                <materialDesign:Card Width="540" Height="152" Background="{DynamicResource MahApps.Brushes.Control.Background}" UniformCornerRadius="5">
+                                    <StackPanel Orientation="Horizontal" Margin="20 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left">
+
+                                        <Button BorderThickness="0.1" FontSize="16" FontWeight="Medium" Width="170" Height="120" HorizontalAlignment="Left" Margin="0 0 0 0" Style="{DynamicResource MahApps.Styles.Button.MetroSquare.Accent}" Foreground="White"  Command="{Binding InicioDeCiclo}">
+                                            <Button.Content>
+                                                <StackPanel Margin="0">
+                                                    <iconPacks:PackIconBoxIcons HorizontalAlignment="Center" Margin="8" Kind="RegularPlay" Foreground="White" Width="45" Height="45"/>
+                                                    <TextBlock Margin="5" FontSize="20" VerticalAlignment="Center">Habilitar teste</TextBlock>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+                                        
+                                        <StackPanel Margin="0 0 0 0" Width="350" >
+                                            <StackPanel Orientation="Horizontal" Margin="0 0 10 0" HorizontalAlignment="Center">
+                                                <iconPacks:PackIconBoxIcons Kind="RegularInfoCircle" VerticalAlignment="Center" Margin="5 5 15 5" Height="25" Width="25"/>
+                                                <TextBlock FontFamily="Segoe UI" FontSize="20" VerticalAlignment="Center">Informações do teste</TextBlock>
+                                            </StackPanel>
+                                          <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <StackPanel>
+                                                    <TextBlock FontFamily="Segoe UI" Margin="2" FontSize="16" TextAlignment="Left">iniciado por:</TextBlock>
+                                                    <TextBlock FontFamily="Segoe UI" Margin="2" FontSize="16" TextAlignment="Left">hora de partida:</TextBlock>
+                                                    <TextBlock FontFamily="Segoe UI" Margin="2" FontSize="16" TextAlignment="Left">ciclos estipulados:</TextBlock>
+                                                    <TextBlock FontFamily="Segoe UI" Margin="2" FontSize="16" TextAlignment="Left">estado atual:</TextBlock>
+                                                </StackPanel>
+                                              
+                                                <StackPanel Margin="5 0 0 0" HorizontalAlignment="Center">
+                                                    <TextBlock FontFamily="Segoe UI" Margin="2" FontSize="16" Text="{Binding IniciadoPor}"></TextBlock>
+                                                    <TextBlock FontFamily="Segoe UI" Margin="2" FontSize="16" Text="{Binding HoraPartida}"></TextBlock>
+                                                    <TextBlock FontFamily="Segoe UI" Margin="2" FontSize="16" Text="{Binding CiclosEstipulados}"></TextBlock>
+                                                    <TextBlock FontFamily="Segoe UI" Margin="2" FontSize="16" Text="{Binding EstadoAtual}"></TextBlock>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    
+                                </materialDesign:Card>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+
+            </materialDesign:TransitioningContent>
+
+
+        </StackPanel>
+        <controls:FlyoutsControl  Width="1146">
+            <controls:Flyout Position="Top" IsAutoCloseEnabled="True" AutoCloseInterval="3000" Height="45"  IsOpen="{Binding MostrarMensagem}" CloseButtonVisibility="Collapsed">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <iconPacks:PackIconFeatherIcons HorizontalAlignment="Center" Margin="0 0 10 0" Kind="CheckCircle" Foreground="{DynamicResource MahApps.Brushes.Accent}" Width="20" Height="20"/>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Text="{Binding ConteudoMensagem}"></TextBlock>
+                </StackPanel>
+
+            </controls:Flyout>
+
+        </controls:FlyoutsControl>
+
+
+    </Grid>
+</Page>

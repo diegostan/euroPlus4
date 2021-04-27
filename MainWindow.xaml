@@ -1,0 +1,257 @@
+﻿<controls:MetroWindow
+         xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:kbrd="clr-namespace:Rife.Keyboard;assembly=Rife.Keyboard"
+        xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:euroPlus4_1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="euroPlus4_1.MainWindow"
+    
+        mc:Ignorable="d"
+        Title="euroPlus 4" Height="768" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="NoResize" ShowInTaskbar="False" IsMaxRestoreButtonEnabled="False" IsMinButtonEnabled="False" IsWindowDraggable="False" IgnoreTaskbarOnMaximize="True"  IsCloseButtonEnabled="False" AllowsTransparency="True" TitleBarHeight="0" WindowStyle="None">
+
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="FocusStyle">
+                <Setter Property="Control.Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="AliceBlue"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source ="/euroPlus4_1;component/Keyboards.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+
+    <Viewbox VerticalAlignment="Top">
+
+        <Grid Background="Black" x:Name="mainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="125*"/>
+                <RowDefinition Height="67*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Width="1366" Orientation="Horizontal" Grid.RowSpan="2">
+
+                <StackPanel HorizontalAlignment="Left" Height="768" Width="220">
+                    <Grid>
+                        <Image  Height="120" Source="Images/Wallpaper/fundoStack.png" ></Image>
+                        <StackPanel Margin="0 15 0 0">
+                            <Image Source="Images/Logos/logoSmall.png" MaxHeight="70" MaxWidth="70"/>
+                            <TextBlock FontFamily="Segoe UI" HorizontalAlignment="Center" FontSize="20" Margin="0"  FontWeight="Light" Foreground="White">euroPlus 4</TextBlock>
+                        </StackPanel>
+                    </Grid>
+
+                    <ListView x:Name="listViewLeft" FontFamily="Segoe UI" Height="578" Background="{DynamicResource MahApps.Brushes.Control.Background}" SelectedIndex="0" SelectionMode="Single" MouseUp="ListViewItem_MouseUp" BorderThickness="0">
+                        <ListViewItem Height="45" >
+                            <StackPanel Orientation="Horizontal" Margin="10 0" Width="185">
+                                <iconPacks:PackIconEntypo Kind="Home" Padding="0" VerticalAlignment="Center" Height="20" Width="20"/>
+                                <TextBlock Padding="10"  Margin="5 0 0 0"  FontSize="14">Inicio</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <ListViewItem Height="45">
+                            <StackPanel Orientation="Horizontal" Margin="10 0" Width="185">
+                                <iconPacks:PackIconBoxIcons Kind="SolidDashboard" Padding="0" VerticalAlignment="Center"  Height="20" Width="20"/>
+                                <TextBlock Padding="10" Margin="5 0 0 0"  FontSize="14">Visão geral</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <ListViewItem Height="5" Foreground="Black" IsEnabled="False" >
+                            <StackPanel Orientation="Horizontal"  Width="205">
+                                <Border BorderThickness="0.5" Background="#FF959595" BorderBrush="#FFCBCBCB" Width="205" HorizontalAlignment="Center"></Border>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <ListViewItem Height="45" MouseUp="ListViewItem_MouseUp_1">
+                            <StackPanel Orientation="Horizontal" Margin="10 0" Width="185">
+                                <iconPacks:PackIconBoxIcons Kind="RegularStation" Padding="0" VerticalAlignment="Center"  Height="20" Width="20"/>
+                                <TextBlock Padding="10" Margin="5 0 0 0" FontSize="14">Estações</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="45" >
+                            <StackPanel Orientation="Horizontal" Margin="10 0" Width="185">
+                                <iconPacks:PackIconBoxIcons Kind="SolidThermometer" Padding="0" VerticalAlignment="Center"  Height="20" Width="20"/>
+                                <TextBlock Padding="10" Margin="5 0 0 0" FontSize="14">Temperaturas</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="45" MouseUp="ListViewItem_MouseUp_1">
+                            <StackPanel Orientation="Horizontal" Margin="10 0" Width="185">
+                                <iconPacks:PackIconMaterial Kind="Pump" Padding="0" VerticalAlignment="Center"  Height="20" Width="20"/>
+                                <TextBlock Padding="10" Margin="5 0 0 0" FontSize="14">Bomba hidráulica</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+
+
+                        <ListViewItem Height="45" >
+                            <StackPanel Orientation="Horizontal" Margin="10 0" Width="185">
+                                <iconPacks:PackIconMaterial Kind="AvTimer" Padding="0" VerticalAlignment="Center"  Height="20" Width="20"/>
+                                <TextBlock Padding="10" Margin="5 0 0 0" FontSize="14">Tempos e frequências</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+
+
+                        <ListViewItem Height="5" Foreground="Black" IsEnabled="False" >
+                            <StackPanel Orientation="Horizontal"  Width="205">
+                                <Border BorderThickness="0.4" Background="#FF959595" BorderBrush="#FFCBCBCB" Width="205" HorizontalAlignment="Center"></Border>
+                            </StackPanel>
+                        </ListViewItem>
+
+
+
+                        <ListViewItem Height="45" >
+                            <StackPanel Orientation="Horizontal" Margin="10 0" Width="185">
+                                <iconPacks:PackIconMaterial Kind="DatabaseEdit" Padding="0" VerticalAlignment="Center"  Height="20" Width="20"/>
+                                <TextBlock Padding="10" Margin="5 0 0 0" FontSize="14">Gerenciar dados</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+
+
+                        <ListViewItem Height="45" >
+                            <StackPanel Orientation="Horizontal" Margin="10 0" Width="185">
+                                <iconPacks:PackIconMaterial Kind="Logout" Padding="0" VerticalAlignment="Center"  Height="20" Width="20"/>
+                                <TextBlock Padding="10" Margin="5 0 0 0" FontSize="14" >Sair</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+
+                    </ListView>
+                    <StackPanel Orientation="Horizontal" Height="70" Background="{DynamicResource MahApps.Brushes.Control.Background}" VerticalAlignment="Bottom">
+                        <Button x:Name="configButton" Margin="10" Width="50" Height="50" Click="ConfigButton_Click">
+                            <Button.Content>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Settings" Width="35" Height="35" Foreground="#FF8246CB"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+
+
+                        <controls:Badged x:Name="badgedAlarmes"  Badge="{Binding AlarmesAtivos}" Height="50" Margin="10 0 10 0" BadgeBackground="Red" >
+                            <Button x:Name="alarmButton" Click="alarmButton_Click"   Width="50" Height="50">
+                                <Button.Content>
+                                    <StackPanel>
+                                        <materialDesign:PackIcon Kind="AlarmLightOutline" Width="35" Height="35" Foreground="#FFBF3C3C"/>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                        </controls:Badged>
+
+
+                        <Button x:Name="userButton" Click="userButton_Click" Margin="10" Width="50" Height="50">
+                            <Button.Content>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="UserCircle" Width="35" Height="35" Foreground="#FF248DE6"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+
+
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel>
+
+                    <Grid x:Name="gridContent" Margin="0 0 0 0" Width="1146" Height="698" HorizontalAlignment="Right" >
+                        <Frame x:Name="menuContent" Margin="0,0,0,0"  Height="698"  Width="1146" NavigationUIVisibility="Hidden">
+                            <Frame.Background>
+                                <ImageBrush ImageSource="Images/Wallpaper/fundoFrame3.jpg" Opacity="0.4"/>
+                            </Frame.Background>
+                        </Frame>
+                    </Grid>
+                    <StackPanel Background="{DynamicResource MahApps.Brushes.Control.Background}" Width="1146" Height="70" Orientation="Horizontal">
+
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch"  VerticalAlignment="Bottom" Height="70">
+                            <!--Componente de modo de operação da máquina-->
+                            <iconPacks:PackIconMaterial Kind="{Binding ModoDeOperacaoIcone}" VerticalAlignment="Center" Padding="2" Width="32" Height="32" Margin="0 0 0 0" />
+                            <StackPanel Width="115" VerticalAlignment="Center" Margin="0">
+                                <TextBlock Text="{Binding ModoDeOperacao}" FontFamily="Segoe UI" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+                            </StackPanel>
+                            <Border Height="45" BorderThickness="0.5" VerticalAlignment="Center"  BorderBrush="#FFCBCBCB" Margin="10"></Border>
+                            <!--Fim do componente de modo de operação da máquina-->
+
+                            <!--Componente de estado da máquina-->
+                            <iconPacks:PackIconMaterial Kind="{Binding EstadoDaMaquinaIcone}" VerticalAlignment="Center" Padding="2" Width="35" Height="35" Margin="5" />
+                            <StackPanel Width="115" VerticalAlignment="Center" Margin="5">
+                                <TextBlock Text="{Binding EstadoDaMaquina}" FontFamily="Segoe UI" TextWrapping="Wrap" FontSize="14"  HorizontalAlignment="Center"></TextBlock>
+                            </StackPanel>
+                            <Border Height="45" BorderThickness="0.5" VerticalAlignment="Center"  BorderBrush="#FFCBCBCB" Margin="10"></Border>
+                            <!--Fim do componente de estado da máquina-->
+
+                            <!--Componente de estadp da bomba-->
+                            <iconPacks:PackIconMaterial Kind="Pump" VerticalAlignment="Center" Padding="2" Width="35" Height="35" Margin="5" />
+                            <StackPanel Width="90" VerticalAlignment="Center" Margin="5">
+                                <TextBlock Text="{Binding VazaoAtual}" FontFamily="Segoe UI" FontSize="14"  HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Text="{Binding PressaoAtual}" FontFamily="Segoe UI" FontSize="14"  HorizontalAlignment="Left"></TextBlock>
+                            </StackPanel>
+                            <Border Height="45" BorderThickness="0.5" VerticalAlignment="Center"  BorderBrush="#FFCBCBCB" Margin="10"></Border>
+                            <!--Fim do componente de estado da bomba-->
+
+                            <!--Componente de aquecimento da máquina-->
+                            <iconPacks:PackIconMaterial  Kind="ThermometerChevronUp" VerticalAlignment="Center" Padding="2" Width="35" Height="35" Margin="5" />
+                            <StackPanel Width="118" VerticalAlignment="Center" Margin="2">
+                                <TextBlock Text="{Binding AquecimentoFluido}" FontSize="13" FontFamily="Segoe UI"  HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Text="{Binding AquecimentoCamara}" FontSize="13" FontFamily="Segoe UI"  HorizontalAlignment="Left"></TextBlock>
+                            </StackPanel>
+                            <Border Height="45" BorderThickness="0.5" VerticalAlignment="Center"  BorderBrush="#FFCBCBCB" Margin="10"></Border>
+                            <!--Fim do componente de aquecimento da máquina-->
+
+                            <!--Componente de estado da comunicacao-->
+                            <iconPacks:PackIconModern  Kind="Connect" VerticalAlignment="Center" Padding="2" Width="35" Height="35" Margin="0" />
+                            <StackPanel Width="90" VerticalAlignment="Center" Margin="5">
+                                <TextBlock Text="{Binding StatusConexao}" FontFamily="Segoe UI" TextWrapping="Wrap" Width="100" FontSize="14"  HorizontalAlignment="Left"></TextBlock>
+                            </StackPanel>
+                            <Border Height="45" BorderThickness="0.5" VerticalAlignment="Center"  BorderBrush="#FFCBCBCB" Margin="10"></Border>
+                            <!--Fim do componente de estado da comunicacao-->
+
+                            <!--Componente do mostrador de data e hora-->
+                            <iconPacks:PackIconMaterial Kind="CalendarClock" VerticalAlignment="Center" Padding="2" Width="35" Height="35" Margin="5" />
+                            <StackPanel Width="90" VerticalAlignment="Center" Margin="0">
+                                <TextBlock Text="{Binding DataAtual}" FontFamily="Segoe UI" FontSize="14"  HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Text="{Binding HoraAtual}" FontFamily="Segoe UI" FontSize="14"  HorizontalAlignment="Left"></TextBlock>
+                            </StackPanel>
+                            <Border Height="45" BorderThickness="0.5" VerticalAlignment="Center"  BorderBrush="#FFCBCBCB" Margin="10"></Border>
+                            <!--Fim componente do mostrador de data e hora-->
+
+                            <!--Botão de ajuda-->
+                            <Button Height="48" Width="48" Margin="5" x:Name="btAjuda" Click="btAjuda_Click">
+                                <Button.Content>
+                                    <materialDesign:PackIcon Kind="HelpRhombus" Width="35" Height="35" Foreground="#FFFF8000"/>
+                                </Button.Content>
+                            </Button>
+                            <!--Fim do botão de ajuda-->
+
+                            <!--Botão de informações-->
+                            <Button Height="48" Width="48" Margin="5" x:Name="btInformacoes" Click="btInformacoes_Click">
+                                <Button.Content>
+                                    <materialDesign:PackIcon Kind="InformationCircle" Width="35" Height="35" Foreground="#FF1B81C7"/>
+                                </Button.Content>
+                            </Button>
+                            <!--Fim do botão de informações-->
+
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <Frame x:Name="mainContent" NavigationUIVisibility="Hidden" Grid.RowSpan="2">
+
+            </Frame>
+
+            <Grid x:Name="virtualKeyboardGrid" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="627,184,27,184" Height="400" Width="712" Grid.RowSpan="2">
+                <Viewbox Height="auto" Width="auto">
+                    <kbrd:Keyboard x:Name="Keyboard"  />
+                </Viewbox>
+            </Grid>
+
+        </Grid>
+
+    </Viewbox>
+
+</controls:MetroWindow>

@@ -1,0 +1,244 @@
+﻿<Page x:Class="euroPlus4_1.Views.UsuariosView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:kbrd="clr-namespace:Rife.Keyboard;assembly=Rife.Keyboard"
+      mc:Ignorable="d"
+      d:DesignHeight="698" d:DesignWidth="1146"
+      Title="UsuariosView" LostFocus="Page_LostFocus">
+
+    <Grid Height="698">
+
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="1146" Height="698">
+            <StackPanel Height="45" HorizontalAlignment="Stretch"  Width="1146" Margin="0 0 0 0"  Opacity="0.8">
+                <TextBlock Margin="10" FontSize="20" TextAlignment="Center" VerticalAlignment="Center" Foreground="White">Usuários</TextBlock>
+            </StackPanel>
+
+
+            <materialDesign:TransitioningContent Padding="0" Height="653">
+                <materialDesign:TransitioningContent.OpeningEffects >
+                    <materialDesign:TransitionEffect Kind="FadeIn" Duration="0:0:0.8"/>
+                </materialDesign:TransitioningContent.OpeningEffects>
+                
+                <Grid Margin="10">
+                    <controls:MetroAnimatedTabControl Background="{x:Null}" x:Name="menu" controls:TabControlHelper.Underlined="TabPanel">
+                        <controls:MetroTabItem Header=" corrente ">
+                            <StackPanel Height="584" Margin="10" Orientation="Horizontal">
+                                <StackPanel Width="900">
+                                    <TextBlock Margin="5" FontSize="20" FontWeight="SemiBold" Foreground="White">Dados do usuário atual</TextBlock>
+                                    <StackPanel Orientation="Horizontal">
+                                        <iconPacks:PackIconFeatherIcons HorizontalAlignment="Center" Margin="8" Kind="User" Foreground="White" Width="25" Height="25"/>
+                                        <TextBlock Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Credenciais</TextBlock>
+                                    </StackPanel>
+                                                                                                            
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel Width="230">
+                                            <TextBlock Margin="5" FontWeight="Light" FontSize="18" Foreground="White">Nome:</TextBlock>
+                                            <TextBlock Margin="5" FontWeight="Light" FontSize="18" Foreground="White">Nível de acesso:</TextBlock>
+                                            <TextBlock Margin="5" FontWeight="Light" FontSize="18" Foreground="White">Possui RFID:</TextBlock>
+                                            <TextBlock Margin="5" FontWeight="Light" FontSize="18" Foreground="White">Data e hora do login:</TextBlock>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock x:Name="lblNome" Margin="5" FontWeight="Medium" FontSize="18" Foreground="DarkGray"></TextBlock>
+                                            <TextBlock x:Name="lblNivel" Margin="5" FontWeight="Medium" FontSize="18" Foreground="DarkGray"></TextBlock>
+                                            <TextBlock x:Name="lblRFID" Margin="5" FontWeight="Medium" FontSize="18" Foreground="DarkGray">Não</TextBlock>
+                                            <TextBlock x:Name="lblData" Margin="5" FontWeight="Medium" FontSize="18" Foreground="DarkGray">08/09/2020</TextBlock>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    
+                                    <StackPanel Orientation="Horizontal" Margin="-8 15 0 10">
+                                        <iconPacks:PackIconFeatherIcons HorizontalAlignment="Center" Margin="8" Kind="AlertCircle" Foreground="PaleVioletRed" Width="23" Height="23" VerticalAlignment="Center"/>
+                                        <TextBlock Margin="0 0 0 0" MaxWidth="320" TextWrapping="Wrap" HorizontalAlignment="Left" FontWeight="Light" FontSize="14" Foreground="PaleVioletRed" VerticalAlignment="Center">Os dados apresentados só podem ser editados na presença de um login em nível de administrador.</TextBlock>
+                                    </StackPanel>
+
+
+
+                                    
+                                </StackPanel>
+
+                                <StackPanel Width="206">
+                                    <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <materialDesign:PackIcon Kind="UserBadge" Height="20" Width="20" Foreground="White" VerticalAlignment="Center"/>
+                                        <TextBlock Margin="5" FontWeight="Medium" FontSize="12" Foreground="White" VerticalAlignment="Center">Credenciais</TextBlock>
+                                    </StackPanel>
+                                    <TextBlock TextAlignment="Left" Margin="5" FontWeight="Light" FontSize="11" Foreground="White" TextWrapping="Wrap">Para a máxima segurança dos usuários, os dados de login só poderão ser editados, criados ou apagados por um usuário em nível de administrador.</TextBlock>
+
+                                    
+                                </StackPanel>
+
+                            </StackPanel>
+                        </controls:MetroTabItem>
+                        
+                        
+                        <controls:MetroTabItem Header=" controle de acesso ">
+
+                            <controls:MetroAnimatedTabControl Background="{x:Null}" controls:TabControlHelper.Underlined="TabPanel" FontSize="8" TabStripPlacement="Top" >
+                                <controls:MetroTabItem Header=" adicionar " Background="{x:Null}" FontSize="8">
+                                    <StackPanel Height="584" Margin="10" Orientation="Horizontal">
+                                  
+                                        <StackPanel Width="900">
+                                   
+                                            <TextBlock Margin="5" FontSize="20" FontWeight="SemiBold" Foreground="White">Configuração de usuários</TextBlock>
+                                              <StackPanel Orientation="Horizontal">
+                                             <iconPacks:PackIconMaterialDesign HorizontalAlignment="Center" Margin="8" Kind="PersonPin" Foreground="White" Width="25" Height="25"/>
+                                               <TextBlock Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Dados  para adicionar usuário</TextBlock>
+                                         </StackPanel>
+                                          <TextBlock Margin="2" FontWeight="Light" FontSize="16" Foreground="White">Nome</TextBlock>
+                                            <TextBox Text="{Binding UsuarioAdd.Nome}" Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"  Width="350" Height="40" TextAlignment="Left" FontSize="22" FontWeight="Medium" HorizontalAlignment="Left" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"></TextBox>
+                                    
+                                          <TextBlock Margin="2" FontWeight="Light" FontSize="16" Foreground="White">Senha</TextBlock>
+                                            <TextBox Text="{Binding UsuarioAdd.Senha}"  Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"   Width="350" Height="40" FontSize="22" FontWeight="Medium" HorizontalAlignment="Left" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"></TextBox>
+                                            
+                                            <TextBlock Margin="2" FontWeight="Light" FontSize="16" Foreground="White">Dica de senha</TextBlock>
+                                            <TextBox Text="{Binding UsuarioAdd.DicaSenha}"  Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"   Width="350" Height="40" FontSize="22" FontWeight="Medium" HorizontalAlignment="Left" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"></TextBox>
+
+                                            <TextBlock Margin="2" FontWeight="Light" FontSize="16" Foreground="White">Código RFID</TextBlock>
+                                            <TextBox Text="{Binding UsuarioAdd.RFID}"  Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"   Width="350" Height="40" FontSize="22" FontWeight="Medium" HorizontalAlignment="Left" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"></TextBox>
+
+                                             <TextBlock Margin="2" FontWeight="Light" FontSize="16" Foreground="White">Nível de acesso</TextBlock>
+                                            <controls:NumericUpDown Margin="0 0 0 10"  controls:TextBoxHelper.SelectAllOnFocus="True"  Width="350" Height="40" UpDownButtonsWidth="50" TextAlignment="Left" Minimum="0" Maximum="10" Value="{Binding UsuarioAdd.Nivel}" FontSize="22" FontWeight="Medium" HorizontalAlignment="Left" GotFocus="NumericUpDown_GotFocus" LostFocus="NumericUpDown_LostFocus"></controls:NumericUpDown>
+
+                                           
+
+
+                                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0" VerticalAlignment="Center">
+
+                                                <Button BorderThickness="0.1" Height="auto"  FontSize="16" FontWeight="Medium" Width="350" HorizontalAlignment="Left" Margin="0 0 0 0"  Opacity="0.66" Style="{DynamicResource MahApps.Styles.Button.MetroSquare.Accent}" Foreground="White" Command="{Binding AdicionarUsuario}">
+                                            <Button.Content>
+                                                <StackPanel Orientation="Horizontal" Margin="0">
+                                                    <iconPacks:PackIconModern HorizontalAlignment="Center" Margin="8" Kind="UserAdd" Foreground="White" Width="25" Height="25"/>
+                                                    <TextBlock Margin="5" VerticalAlignment="Center">Adicionar usuário</TextBlock>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+                                    </StackPanel>
+                                      
+                                </StackPanel>
+
+                                <StackPanel Width="206">
+                                    <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <materialDesign:PackIcon Kind="UserAlert" Height="20" Width="20" Foreground="White" VerticalAlignment="Center"/>
+                                            <TextBlock Margin="5" FontWeight="Medium" FontSize="12" Foreground="White" VerticalAlignment="Center">Configurar acesso</TextBlock>
+                                    </StackPanel>
+                                        <TextBlock TextAlignment="Left" Margin="5" FontWeight="Light" FontSize="11" Foreground="White" TextWrapping="Wrap">O euroPlus permite o controle de acesso por meio de níveis, quanto maior o nível maior o acesso. As telas podem ser vinculadas à níveis individualmente para fornecer acesso ou não para um determinado usuário, o(s) usuário(s) de nível 10 terá(ão) acesso de administrador.</TextBlock>
+
+                                </StackPanel>
+                                        </StackPanel>
+                                  
+                            
+                                </controls:MetroTabItem>
+                                
+                                <controls:MetroTabItem Header=" gerenciar " Background="{x:Null}" FontSize="8">
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel Width="900">
+                                            <StackPanel Orientation="Horizontal">
+                                                <iconPacks:PackIconModern HorizontalAlignment="Center" Margin="8" Kind="List" Foreground="White" Width="25" Height="25"/>
+                                                <TextBlock Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Lista de usuários cadastrados</TextBlock>
+                                            </StackPanel>
+
+                                            <DataGrid BorderThickness="2" CanUserResizeRows="False"  ItemsSource="{Binding ListaDeUsuarios}" SelectedItem="{Binding UsuarioSelecionado, Mode=TwoWay}" SelectionMode="Single" HorizontalAlignment="Left" Style="{DynamicResource MahApps.Styles.DataGrid.Azure}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"  Margin="5" FontSize="12" Height="400"  Width="670">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Binding="{Binding ID}" Header="ID"  IsReadOnly="True"  Width="50"/>
+                                                    <DataGridTextColumn Binding="{Binding Nome}" Header="Nome"  IsReadOnly="True"  Width="230"/>
+                                                    <DataGridTextColumn Binding="{Binding Nivel}" Header="Nível"  IsReadOnly="True"  Width="60"/>
+                                                    <DataGridTextColumn Binding="{Binding RFID}" Header="RFID"  IsReadOnly="True" Width="200"/>
+                                                    <DataGridTextColumn Binding="{Binding DataCriacao}" Header="Data de criação"  IsReadOnly="True" Width="200"/>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                            <Button Command="{Binding RemoverUsuario}" BorderThickness="0.1" Height="auto"  FontSize="16" FontWeight="Medium" HorizontalAlignment="Left" Margin="5 20 0 10" Width="670" Opacity="0.66" Style="{DynamicResource MahApps.Styles.Button.MetroSquare.Accent}" Foreground="White" >
+                                                <Button.Content>
+                                                    <StackPanel Orientation="Horizontal" Margin="0">
+                                                        <iconPacks:PackIconBoxIcons HorizontalAlignment="Center" Margin="8" Kind="SolidUserX" Foreground="White" Width="25" Height="25"/>
+                                                        <TextBlock Margin="5" VerticalAlignment="Center">Remover usuário</TextBlock>
+                                                    </StackPanel>
+                                                </Button.Content>
+                                            </Button>
+
+                                        </StackPanel>
+                                        <StackPanel Width="206">
+                                            <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                                                <materialDesign:PackIcon Kind="UserRemove" Height="20" Width="20" Foreground="White" VerticalAlignment="Center"/>
+                                                <TextBlock Margin="5" FontWeight="Medium" FontSize="12" Foreground="White" VerticalAlignment="Center">Política de gerenciamento</TextBlock>
+                                            </StackPanel>
+                                            <TextBlock TextAlignment="Left" Margin="5" FontWeight="Light" FontSize="11" Foreground="White" TextWrapping="Wrap">Devido às politicas de segurança do euroPlus, não será mais possível editar os dados de usuário como senha ou código RFID. Caso necessite fazer a alteração, a mesma deverá ser realizada a partir da criação de um novo usuário. Não se esqueça que o euroPlus não permite nomes duplicados então deve-se apagar o usuário antes de cria-lo novamente.</TextBlock>
+
+                                        </StackPanel>
+                                    </StackPanel>
+                                </controls:MetroTabItem>
+
+                                <controls:MetroTabItem Header=" ajustar níveis " Background="{x:Null}" FontSize="8">
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel Width="900">
+                                            <StackPanel Orientation="Horizontal">
+                                                <iconPacks:PackIconModern HorizontalAlignment="Center" Margin="8" Kind="List" Foreground="White" Width="25" Height="25"/>
+                                                <TextBlock Margin="5" VerticalAlignment="Center"  Foreground="White" FontSize="18" FontWeight="Medium">Lista de telas disponíveis</TextBlock>
+                                            </StackPanel>
+
+                                            <DataGrid BorderThickness="2" CanUserResizeRows="False" GotFocus="NumericUpDown_GotFocus" LostFocus="NumericUpDown_LostFocus"  ItemsSource="{Binding ListaDeTelas, Mode=TwoWay}" SelectedItem="{Binding TelaSelecionada, Mode=TwoWay}" SelectionMode="Single" HorizontalAlignment="Left" Style="{DynamicResource MahApps.Styles.DataGrid.Azure}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"  Margin="5" FontSize="12" Height="400"  Width="500">
+                                                <DataGrid.Columns>
+                                                    
+                                                    <DataGridTextColumn Binding="{Binding Descricao}" Header="Descrição"  IsReadOnly="True"  Width="440"/>
+                                                    <DataGridTextColumn Binding="{Binding Nivel}" Header="Nível"  Width="60"/>
+
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                            <StackPanel Orientation="Horizontal">
+                                            <Button Command="{Binding AtualizarNiveisTelas}" BorderThickness="0.1" Height="auto"  FontSize="16" FontWeight="Medium" HorizontalAlignment="Left" Margin="5 20 0 10" Width="235" Opacity="0.66" Style="{DynamicResource MahApps.Styles.Button.MetroSquare.Accent}" Foreground="White" >
+                                                <Button.Content>
+                                                    <StackPanel Orientation="Horizontal" Margin="0">
+                                                        <iconPacks:PackIconBoxIcons HorizontalAlignment="Center" Margin="8" Kind="SolidSave" Foreground="White" Width="25" Height="25"/>
+                                                        <TextBlock Margin="5" VerticalAlignment="Center">Salvar configuração</TextBlock>
+                                                    </StackPanel>
+                                                </Button.Content>
+                                            </Button>
+
+                                                <Button Command="{Binding AtualizarListaDeTelas}" BorderThickness="0.1" Height="auto"  FontSize="16" FontWeight="Medium" HorizontalAlignment="Left" Margin="30 20 0 10" Width="235" Opacity="0.66" Style="{DynamicResource MahApps.Styles.Button.MetroSquare.Accent}" Foreground="White" >
+                                                <Button.Content>
+                                                    <StackPanel Orientation="Horizontal" Margin="0">
+                                                        <iconPacks:PackIconBoxIcons HorizontalAlignment="Center" Margin="8" Kind="RegularRefresh" Foreground="White" Width="25" Height="25"/>
+                                                        <TextBlock Margin="5" VerticalAlignment="Center">Atualizar lista</TextBlock>
+                                                    </StackPanel>
+                                                </Button.Content>
+                                            </Button>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <StackPanel Width="206">
+                                            <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                                                <materialDesign:PackIcon Kind="UserRemove" Height="20" Width="20" Foreground="White" VerticalAlignment="Center"/>
+                                                <TextBlock Margin="5" FontWeight="Medium" FontSize="12" Foreground="White" VerticalAlignment="Center">Política de gerenciamento</TextBlock>
+                                            </StackPanel>
+                                            <TextBlock TextAlignment="Left" Margin="5" FontWeight="Light" FontSize="11" Foreground="White" TextWrapping="Wrap">Devido às politicas de segurança do euroPlus, não será mais possível editar os dados de usuário como senha ou código RFID. Caso necessite fazer a alteração, a mesma deverá ser realizada a partir da criação de um novo usuário. Não se esqueça que o euroPlus não permite nomes duplicados então deve-se apagar o usuário antes de cria-lo novamente.</TextBlock>
+
+                                        </StackPanel>
+                                    </StackPanel>
+                                </controls:MetroTabItem>
+
+                            </controls:MetroAnimatedTabControl>
+                        </controls:MetroTabItem>
+
+
+
+
+                    </controls:MetroAnimatedTabControl>
+                </Grid>
+                
+            </materialDesign:TransitioningContent>
+
+        </StackPanel>
+        <controls:FlyoutsControl  Width="1146">
+            <controls:Flyout Background="{DynamicResource MahApps.Brushes.Control.Background}" Position="Top" IsAutoCloseEnabled="True" AutoCloseInterval="3000" Height="45"  IsOpen="{Binding MostrarMensagem}" CloseButtonVisibility="Collapsed">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Background="{DynamicResource MahApps.Brushes.Control.Background}" >
+                    <iconPacks:PackIconFeatherIcons HorizontalAlignment="Center" Margin="0 0 10 0" Kind="CheckCircle" Foreground="{DynamicResource MahApps.Brushes.Accent}" Width="20" Height="20"/>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Text="{Binding ConteudoMensagem}"></TextBlock>
+                </StackPanel>
+
+            </controls:Flyout>
+        </controls:FlyoutsControl>
+
+
+    </Grid>
+</Page>

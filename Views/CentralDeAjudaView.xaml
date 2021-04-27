@@ -1,0 +1,239 @@
+﻿<Page x:Class="euroPlus4_1.Views.CentralDeAjudaView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:kbrd="clr-namespace:Rife.Keyboard;assembly=Rife.Keyboard"
+      mc:Ignorable="d"
+      d:DesignHeight="698" d:DesignWidth="1146"
+      Title="CentralDeAjudaView">
+
+    <Grid Height="698" Background="Black" Opacity="0.8">
+
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="1146" Height="698">
+            <StackPanel Height="45" HorizontalAlignment="Stretch"  Width="1146" Margin="0 0 0 0"  Opacity="0.8">
+                <TextBlock Margin="10" FontSize="20" TextAlignment="Center" VerticalAlignment="Center" Foreground="White">Central de ajuda</TextBlock>
+            </StackPanel>
+
+
+
+
+            <materialDesign:TransitioningContent Padding="0" Height="653">
+                <materialDesign:TransitioningContent.OpeningEffects >
+                    <materialDesign:TransitionEffect Kind="SlideInFromBottom" Duration="0:0:0.8"/>
+                </materialDesign:TransitioningContent.OpeningEffects>
+                <Grid Margin="0">
+                    <ScrollViewer>
+                        <StackPanel Orientation="Horizontal" Width="1146" HorizontalAlignment="Left">
+
+                            <StackPanel Margin="10" Width="800" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal" Margin="10 0 0 0">
+                                    <iconPacks:PackIconMaterial Kind="HelpCircleOutline" Foreground="DodgerBlue" VerticalAlignment="Center" Width="25" Height="25"/>
+                                    <TextBlock Margin="10" FontSize="18" FontWeight="SemiBold" Foreground="DodgerBlue">Dúvidas sobre o sistema</TextBlock>
+                                </StackPanel>
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="o que é o europlus 4" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                        O euroPlus 4 é um sistema desenvolvido para máquinas industriais, residências inteligentes e veículos automotores com a proposta
+                                        de controlar, integrar e conectar o conjunto a uma rede de controle.
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Como o europlus 4 funciona" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                        O sistema foi projetado a partir de ideais de que tudo pode ser conectado e integrado permitindo assim, a supervisão e o controle
+                                        em tempo real dos equipamentos controlados. O sistema é desenvolvido utilizando-se das mais modernas técnicas de programação e controle
+                                        de qualidade garantindo assim o nome de um sistema bem sucedido no mercado além de utilizar uma tecnologia baseada em PC padrão IBM.
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Por que utilizar um sistema baseado em PC" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                        A tecnologia evolui constantemente, sistemas proprietarios tendem a ficarem obsoletos com o passar do tempo e com o acrescimo da 
+                                        tecnologia na sociedade. Sistemas baseados em arquiteturas padrões(como um PC IBM padrão) podem acompanhar essa curva de tecnologia
+                                        com sem a necessidade de grandes alterações de hardware. A compatibilidade com sistemas padrões também permite a flexibilidade para 
+                                        o usuário no quesito hardware, qualquer computador com os requisitos mínimos baseado em um hardware IBM PC pode rodar a linha euroPlus
+                                        sem a necessidade de nenhum hardware específico. A performace de sistemas baseados nessa arquitetura é outro ponto a ser considerado, 
+                                        haja vista que, os PC's estão cada vez mais poderosos e populares.
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Qual a diferença para uma HMI convencional" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                                Ter um sistema baseado em PC significa explorar os recursos das mais modernas tendencias do mercado de tecnologia da informação.
+                                                Acesso fácil a banco de dados, informações na nuvem e inteligencia artificial são algumas das caracteristicas que torna um 
+                                                sistema baseado nessa tecnologia tomar ênfase. As interfaces também são outro ponto a ser considerado, gráficos ricos em informação,
+                                                animações e transições de tela, temas e modo noturno são só algumas das vantagens no quesito design de interface disponíveis.
+                                                A experiência de uso de um sistema desse porte é totalmente amigável e pode ser atualizada de forma constante conforme tendencias.
+
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Qual o nível de confiabilidade do europlus 4" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                                O euroPlus 4 utiliza tecnologias extremamente importantes para garantir processos críticos, através da distribuição de núcleos e
+                                                tarefas, o sistema gerencia a CPU para que os processos envolvidos na aplicação possuam liberdade para atuar nas partes menos
+                                                utilizadas do hardware. Processos que necessitam de alto nível de confiabilidade são distribuidos em núcleos individuais e dedicados
+                                                permitindo assim, a repetibilidade do processo.
+
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+                                <StackPanel Orientation="Horizontal" Margin="10 20 0 0">
+                                    <iconPacks:PackIconMaterial Kind="LanConnect" Foreground="DodgerBlue" VerticalAlignment="Center" Width="25" Height="25"/>
+                                    <TextBlock Margin="10" FontSize="18" FontWeight="SemiBold" Foreground="DodgerBlue">Dúvidas sobre comunicação</TextBlock>
+                                </StackPanel>
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Como se conectar a uma base de dados" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                                Um dos pontos fortes do euroPlus 4 são as suas ferramentas de gestão de dados, diversos bancos de dados são suportados pelo 
+                                                sistema. Para realizar a configuração de uma base, basta instalar o mecanismo no PC e atraves de uma senha de administrador
+                                                acessar as configurações, definir o local, usuário e senha e realizar a conexão. Se houver a necessidade de criar a estrutura
+                                                do sistema no banco de dados, basta criar uma estrutura de dados pelo próprio euroPlus atraves da tela de configurações.
+
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Como se conectar a um controlador externo" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                                Caso o controlador do equipamento seja externo, você pode utilizar os protocolos de comunicação disponíveis para fazer a conexão.
+                                                O euroPlus 4 permite a conexão de diversos controladores simultaneamente além de permitir o uso de dois meios físicos distintos, 
+                                                serial RS232 e 485 além da popular porta ethernet. Caso o seu sistema externo exija um protocolo diferente do disponível, 
+                                                a equipe de desenvolvimento pode criá-lo para você.
+
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Quais protocolos estão disponíveis" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                                O protocolo de comunicação contido no sistema geralmente é o mesmo utilizado pelo controlador informado na hora da aquisição do sistema, porém, o euroPlus4 
+                                                permite a adição de diversos tipos como OBDII, MODBUS RTU e TCP, SLMP, PROFINET, ETHERCAT ADS, DEVICENET entre outros. Os principais protocolos
+                                                do mercado estão disponíveis. Protocolos específicos também podem ser desenvolvidos e agregados ao sistema.
+
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Como se conectar a uma base na nuvem" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                                A conexão a uma base na nuvem é realizada pelo Microsoft Azure por padrão porem é possível utilizar outros servidores disponíveis.
+                                            A forma de conexão é a mesma de uma base de dados local todavia é necessario uma conexão constante com a internet. Os dados enviados
+                                            para a nuvem podem ser acessados de qualquer lugar do planeta através das ferramentas de produtividade do euroPlus 4, essas ferramentas
+                                            entretanto, são opcionais e devem ser adquiridas separadamente do sistema Standard.
+                                           
+                                            
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Quais as vantagens de uma conexão em nuvem" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                                Visualizar dados de maneira instantânea, ver o estado da máquina, coletar dados de produtividade e desempenho de usuários.
+                                            Também é possível verificar dados persistentes para controle estatístico de processo e relatorios em geral.
+
+
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+                                <StackPanel Orientation="Horizontal" Margin="10 20 0 0">
+                                    <iconPacks:PackIconMaterial Kind="Update" Foreground="DodgerBlue" VerticalAlignment="Center" Width="25" Height="25"/>
+                                    <TextBlock Margin="10" FontSize="18" FontWeight="SemiBold" Foreground="DodgerBlue">Dúvidas sobre atualizações</TextBlock>
+                                </StackPanel>
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Posso atualizar as versões 2 e 3 do euroPlus" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                               A linha de sistemas euroPlus permite retrocompatibilidade com sistemas operacionais de duas gerações anteriores, entretanto a 
+                                            atualização direta não será mais possível dentro do eco sistema devido a inclusão de um Kernel totalmente novo na versão 4.
+                                            Para atualizar das versões 2 e 3 é necessário que o sistema seja readaptado para o equipamento.
+
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Como funciona as atualizações dentro da versão 4" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                            O euroPlus 4 conta com um sistema de atualização automática, quando houver uma nova versão disponível e o PC estiver conectado a internet,
+                                            o sistema irá buscar versões mais recentes e assim atualizar automaticamente, o usuário receberá uma mensagem para confirmar ou não a 
+                                            atualização. É importante sempre manter o sistema atualizado com a versão mais recente que recebe melhorias de usabilidade, performace
+                                            e possíveis erros que venham a acontecer.
+
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+
+                                <StackPanel Orientation="Horizontal" Margin="10 20 0 0">
+                                    <iconPacks:PackIconMaterial Kind="Update" Foreground="DodgerBlue" VerticalAlignment="Center" Width="25" Height="25"/>
+                                    <TextBlock Margin="10" FontSize="18" FontWeight="SemiBold" Foreground="DodgerBlue">Dúvidas sobre utilização</TextBlock>
+                                </StackPanel>
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Como posso obter detalhes de configuração" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                               Todas as telas de configurações do euroPlus 4 contém uma coluna no lado direito com descrições dos parâmetros e configurações.
+
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Como funciona o controle de acesso do sistema" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                            O controle de acesso é dividido em níveis de usuário, ao criar um usuário ele tera um nível que irá permir ou não o acesso a tela respectiva.
+                                            Usuários com níveis inferiores aos níveis configurados, não poderão acessar as mesmas, o usuário de nível 10 é o administrador do
+                                            sistema, esse é o unico nível que permite a edição dos níveis de tela e gerenciamento de usuários. Ainda existe um nível 11 destinado
+                                            a equipe de desenvolvimento.
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Como fazer login usando RFID" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                            O euroPlus 4 conta com suporte a login via tags RFID, para utilzar esse recurso é necessário que o usuário instale um hardware de leitura
+                                            (os hardwares compatíveis estão no manual de usuário) além de inserir os valores da tag no momento de criação do usuário, após esse
+                                            procedimento, basta encostar a tag no leitor que o login é feito de forma rápida e automatica. Lembre-se de que o sistema não irá
+                                            permitir dois ou mais usuários com o mesmo valor de RFID, a tag deve ser única e de responsabilidade do respectivo usuário.
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+
+                                <Expander Margin="5" BorderBrush="{x:Null}" controls:HeaderedControlHelper.HeaderFontSize="18" controls:HeaderedControlHelper.HeaderForeground="White" Header="Como funciona o sistema de alarmes" controls:HeaderedControlHelper.HeaderBackground="Transparent" Foreground="White" TextOptions.TextHintingMode="Animated" Background="{x:Null}">
+                                    <Grid>
+                                        <TextBlock TextWrapping="Wrap" FontWeight="Light">
+                                            Quando houver alarmes ativos no sistema, um circulo irá piscar sobre o botão da tela de acesso aos alarmes, por mais que a causa do alarme tenha sido
+                                            rompida, é necessário que o usuário toque o botão "Verificar alarmes" para limpá-lo da memória, isso é feito para que se tenha noção
+                                            da data e horário que o mesmo foi gerado evitando assim uma outra tela com históricos.
+                                        </TextBlock>
+                                    </Grid>
+                                </Expander>
+                            </StackPanel>
+
+                            <StackPanel Width="206" Margin="100 10 10 10">
+                                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <materialDesign:PackIcon Kind="HelpRhombus" Height="20" Width="20" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBlock Margin="5" FontWeight="Medium" FontSize="12" Foreground="White" VerticalAlignment="Center">Central de ajuda</TextBlock>
+                                </StackPanel>
+                                <TextBlock TextAlignment="Left" Margin="5" FontWeight="Light" FontSize="11" Foreground="White" TextWrapping="Wrap">As principais dúvidas referente ao sistema estão expostas por aqui, qualquer outra dúvida que não seja esclarecida, 
+                                    poderá ser sanada entrando em contato fornecido na tela de informações.</TextBlock>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+
+            </materialDesign:TransitioningContent>
+
+
+        </StackPanel>
+
+
+
+    </Grid>
+</Page>

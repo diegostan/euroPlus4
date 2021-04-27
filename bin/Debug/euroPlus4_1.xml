@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>euroPlus4_1</name>
+    </assembly>
+    <members>
+        <member name="T:euroPlus4_1.Properties.Resources">
+            <summary>
+              Uma classe de recurso fortemente tipados, para pesquisar cadeias de caracteres localizadas etc.
+            </summary>
+        </member>
+        <member name="P:euroPlus4_1.Properties.Resources.ResourceManager">
+            <summary>
+              Retorna a instância cacheada de ResourceManager utilizada por esta classe.
+            </summary>
+        </member>
+        <member name="P:euroPlus4_1.Properties.Resources.Culture">
+            <summary>
+              Substitui a propriedade CurrentUICulture do thread atual para todas
+              as pesquisas de recursos que usam esta classe de recursos fortemente tipados.
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.Views.AlarmeView">
+            <summary>
+            Interação lógica para AlarmeView.xam
+            </summary>
+            <summary>
+            AlarmeView
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.Views.AlarmeView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.Views.BombaHidraulicaView">
+            <summary>
+            Interação lógica para BombaHidraulicaView.xam
+            </summary>
+            <summary>
+            BombaHidraulicaView
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.Views.BombaHidraulicaView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.Views.CentralDeAjudaView">
+            <summary>
+            Interação lógica para CentralDeAjudaView.xam
+            </summary>
+            <summary>
+            CentralDeAjudaView
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.Views.CentralDeAjudaView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.Views.ConfigView">
+            <summary>
+            Interação lógica para ConfigView.xam
+            </summary>
+            <summary>
+            ConfigView
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.Views.ConfigView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.Views.EstacoesView">
+            <summary>
+            Interação lógica para EstacoesView.xam
+            </summary>
+            <summary>
+            EstacoesView
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.Views.EstacoesView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.Views.GerenciarDados">
+            <summary>
+            Interação lógica para GerenciarDados.xam
+            </summary>
+            <summary>
+            GerenciarDados
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.Views.GerenciarDados.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.Views.InformacoesView">
+            <summary>
+            Interação lógica para InformacoesView.xam
+            </summary>
+            <summary>
+            InformacoesView
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.Views.InformacoesView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.Views.InicioView">
+            <summary>
+            Interação lógica para InicioView.xam
+            </summary>
+            <summary>
+            InicioView
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.Views.InicioView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.Views.LoginView">
+            <summary>
+            Interação lógica para LoginView.xam
+            </summary>
+            <summary>
+            LoginView
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.Views.LoginView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.Views.TemperaturasView">
+            <summary>
+            Interação lógica para TemperaturasView.xam
+            </summary>
+            <summary>
+            TemperaturasView
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.Views.TemperaturasView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.Views.TemposFrequenciasView">
+            <summary>
+            Interação lógica para TemposFrequenciasView.xam
+            </summary>
+            <summary>
+            TemposFrequenciasView
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.Views.TemposFrequenciasView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.Views.UsuariosView">
+            <summary>
+            Interação lógica para UsuariosView.xam
+            </summary>
+            <summary>
+            UsuariosView
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.Views.UsuariosView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.Views.VisaoGeralView">
+            <summary>
+            Interação lógica para VisaoGeralView.xam
+            </summary>
+            <summary>
+            VisaoGeralView
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.Views.VisaoGeralView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.App">
+            <summary>
+            Interação lógica para App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:euroPlus4_1.MainWindow">
+            <summary>
+            Interação lógica para MainWindow.xam
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:euroPlus4_1.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,81 @@
+﻿<Page x:Class="euroPlus4_1.Views.InicioView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:local="clr-namespace:euroPlus4_1.Views"
+      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="700" d:DesignWidth="1150"
+      Title="InicioView">
+
+
+    <Grid Height="698">
+
+        <materialDesign:TransitioningContent Background="{DynamicResource MahApps.Brushes.Control.Background}" Height="698">
+
+            <materialDesign:TransitioningContent.OpeningEffects >
+                <materialDesign:TransitionEffect Kind="FadeIn" Duration="0:0:1"/>
+            </materialDesign:TransitioningContent.OpeningEffects>
+
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="1146" Height="698">
+                <StackPanel Height="46" HorizontalAlignment="Stretch"  Width="1148" Margin="0 0 0 0" Background="{DynamicResource MahApps.Brushes.Control.Background}">
+                    <TextBlock Margin="10" FontSize="20" TextAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource MahApps.Brushes.Accent}" >Inicio</TextBlock>
+                </StackPanel>
+
+
+
+                <Grid x:Name="contentGrid" Background="{DynamicResource MahApps.Brushes.Control.Background}" >
+                    <Image Source="/euroPlus4_1;component/Images/Wallpaper/fundoInicio2.png" Stretch="UniformToFill" Visibility="Visible" />
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="top" Margin="0 30 0 0">
+                        <Image Source="/euroPlus4_1;component/Images/Logos/logo.png" MaxHeight="290" MaxWidth="290"></Image>
+                        <TextBlock FontFamily="Segoe UI" HorizontalAlignment="Center" FontSize="64"  FontWeight="Light" Foreground="#FF1691D6" Visibility="Visible">euroPlus 4</TextBlock>
+                        <TextBlock FontFamily="Segoe UI" FontWeight="Medium" FontSize="22" HorizontalAlignment="Center" Visibility="Visible">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF10CEEC" Offset="1"/>
+                                    <GradientStop Color="#FF14BFEC"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>o sistema com a conectividade em foco</TextBlock>
+                    </StackPanel>
+
+                    <Grid HorizontalAlignment="Left" Height="198" Margin="46,445,0,0" VerticalAlignment="Top" Width="1045">
+                        <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                            <StackPanel Width="200">
+                                <TextBlock FontFamily="Segoe UI" FontSize="16" FontWeight="Bold" Foreground="#FF37AAA5" >Conectividade</TextBlock>
+                                <TextBlock FontFamily="Segoe UI" TextWrapping="Wrap" FontSize="11" Foreground="#FF939292">O foco do euroPlus 4 é a conectividade, conectado a uma base de dados do Microsoft Azure, é possível acessar os dados de qualquer lugar do mundo, bem como gerí-los e controlar tolerâncias a distância.</TextBlock>
+                                <iconPacks:PackIconMaterial Margin="10" Kind="CloudOutline" HorizontalAlignment="Center" Width="80" Height="60" Foreground="#FF37AAA5"/>
+                            </StackPanel>
+
+                            <StackPanel Width="200" Margin="80 0 0 0">
+                                <TextBlock FontFamily="Segoe UI" FontSize="16" FontWeight="Bold" Foreground="#FF3F54D8">Automação</TextBlock>
+                                <TextBlock FontFamily="Segoe UI" TextWrapping="Wrap" FontSize="11" Foreground="#FF939292">As ferramentas de automação do euroPlus 4 permitem que junto ao CodeSys a unidade de PC se torne o controlador de sua máquina em um sistema REAL-TIME, existem diversos protocolos disponíveis para PLC's.</TextBlock>
+                                <iconPacks:PackIconMaterial Margin="10" Kind="Robot" HorizontalAlignment="Center" Width="80" Height="60" Foreground="#FF3F54D8"/>
+                            </StackPanel>
+
+                            <StackPanel Width="200" Margin="80 0 0 0">
+                                <TextBlock FontFamily="Segoe UI" FontSize="16" FontWeight="Bold" Foreground="#FFC737A0">Produtividade</TextBlock>
+                                <TextBlock FontFamily="Segoe UI" TextWrapping="Wrap" FontSize="11" Foreground="#FF939292">Analise dados, salve-os e manipule-os da forma que bem entender, o euroPlus 4 permite que o usuário escolha qualquer tipo de variável para análise de controle estatístico além de salvar todos os parametros utilizados durante os ciclos.</TextBlock>
+                                <iconPacks:PackIconTypicons Margin="10" Kind="ChartAreaOutline" HorizontalAlignment="Center" Width="80" Height="60" Foreground="#FFC737A0"/>
+
+                            </StackPanel>
+
+                            <StackPanel Width="200" Margin="80 0 0 0">
+                                <TextBlock FontFamily="Segoe UI" FontSize="16" FontWeight="Bold" Foreground="#FF40BB6D">Escalabilidade</TextBlock>
+                                <TextBlock FontFamily="Segoe UI" TextWrapping="Wrap" FontSize="11" Foreground="#FF939292">O euroPlus 4 é a última grande atualização da família, graças as suas ferramentas de escalabilidade e possibilidade de expansão dentro da própria plataforma, um sistema que aprende com o usuário e necessidades.</TextBlock>
+                                <iconPacks:PackIconModern Margin="10" Kind="ScaleUnbalanced" HorizontalAlignment="Center" Width="80" Height="60" Foreground="#FF40BB6D"/>
+                            </StackPanel>
+
+                        </StackPanel>
+
+
+                    </Grid>
+
+                </Grid>
+
+            </StackPanel>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</Page>

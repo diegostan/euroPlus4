@@ -1,0 +1,102 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="euroPlus4_1.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="sqlServerConfig" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="sqlPortConfig" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5432</Value>
+    </Setting>
+    <Setting Name="sqlUserIdConfig" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sa</Value>
+    </Setting>
+    <Setting Name="sqlPasswordConfig" Type="System.String" Scope="User">
+      <Value Profile="(Default)">191260</Value>
+    </Setting>
+    <Setting Name="sqlDataBase" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sysEP4</Value>
+    </Setting>
+    <Setting Name="CaminhoLog" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\Public\Documents</Value>
+    </Setting>
+    <Setting Name="C_NomeDaMaquina" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="C_PosicaoNaPlanta" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="C_NumeroDeSerie" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="C_TensaoDeEntrada" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="C_Fabricante" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="C_AnoDeFabricacao" Type="System.String" Scope="User">
+      <Value Profile="(Default)">01/01/0001</Value>
+    </Setting>
+    <Setting Name="C_TipoDeAplicacao" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="C_MostrarNome" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="C_Tema" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="C_CorDeDestaque" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="C_AplicarModo" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="C_HoraInicial" Type="System.String" Scope="User">
+      <Value Profile="(Default)">00:00</Value>
+    </Setting>
+    <Setting Name="C_HoraFinal" Type="System.String" Scope="User">
+      <Value Profile="(Default)">00:00</Value>
+    </Setting>
+    <Setting Name="C_ProtocoloEthernet" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="C_EnderecoIp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="C_Porta" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">801</Value>
+    </Setting>
+    <Setting Name="C_ProtocoloSerial" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="C_BaudRate" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="C_StopBit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="C_Paridade" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="C_NumeroEstacao" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="sqlTipoBancoSelecionado" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="UsuarioMaster" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sysEPcontrol</Value>
+    </Setting>
+    <Setting Name="SenhaMaster" Type="System.String" Scope="User">
+      <Value Profile="(Default)">mastercontrol191260</Value>
+    </Setting>
+    <Setting Name="C_TempoLeituraEthernet" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="C_UnidadePressao" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MPa</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

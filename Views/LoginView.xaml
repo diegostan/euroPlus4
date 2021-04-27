@@ -1,0 +1,122 @@
+﻿<Page x:Class="euroPlus4_1.Views.LoginView"
+            xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:kbrd="clr-namespace:Rife.Keyboard;assembly=Rife.Keyboard"
+        xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:euroPlus4_1"
+        mc:Ignorable="d"
+        Title="LoginView" Height="769" Width="1367" PreviewKeyDown="MetroWindow_PreviewKeyDown" MouseDown="MetroWindow_MouseDown">
+
+
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <Style x:Key="FocusStyle">
+                <Setter Property="Control.Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="AliceBlue"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source ="/euroPlus4_1;component/Keyboards.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
+    <Grid Background="Black">
+        <Viewbox Width="auto" Height="auto">
+            <Grid Width="1366" Height="768">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/euroPlus4_1;component/Images/Wallpaper/fundo.jpg" Stretch="Fill" Opacity="0.7"/>
+                </Grid.Background>
+
+                <materialDesign:TransitioningContent  >
+                    <materialDesign:TransitioningContent.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="FadeIn" Duration="0:0:1.8"/>
+                    </materialDesign:TransitioningContent.OpeningEffects>
+                    
+
+                    <StackPanel Margin=" 0 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Grid>
+                            <Grid.Triggers>
+                                <EventTrigger RoutedEvent="Grid.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:2" From="100" To="0" AccelerationRatio="0.8" DecelerationRatio="0.2" Storyboard.TargetName="logoBlur" Storyboard.TargetProperty="Radius"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Grid.Triggers>
+                        <Image x:Name="logoImage" Source="/euroPlus4_1;component/Images/Logos/logo.png" MaxHeight="250" MaxWidth="250">
+                            <Image.Effect>
+                                <BlurEffect x:Name="logoBlur" Radius="0"/>
+                            </Image.Effect>
+                        </Image>
+                        </Grid>
+                        <TextBlock HorizontalAlignment="Center" FontSize="50" FontFamily="Segoe UI" Foreground="White" FontWeight="Light">euroPlus 4</TextBlock>
+                    <TextBlock FontWeight="Medium" FontSize="18" FontFamily="Segoe UI" HorizontalAlignment="Center">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF06EAEC"/>
+                                <GradientStop Color="#FF1169CB" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>o sistema com a conectividade em foco</TextBlock>
+                        <TextBlock FontWeight="Medium" FontFamily="Segoe UI" FontSize="16" HorizontalAlignment="Center" Margin="0 5 0 0" Foreground="#FFC1C1C1" Text="{Binding VersaoAtual}"></TextBlock>
+                    
+                    
+                    <StackPanel Margin="0 20 0 0" Height="350">
+                            <TextBlock FontFamily="Segoe UI"  TextAlignment="Center" FontSize="18" Margin=" 30 0 0 5"  Foreground="AliceBlue" FontWeight="Medium">Entre com suas credenciais</TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconBoxIcons Kind="SolidUser" Width="30" Height="30" Margin="10" FontWeight="SemiBold" Foreground="White" />
+                                <TextBox x:Name="txtUser" FontFamily="Segoe UI" FontSize="27"  HorizontalAlignment="Stretch" BorderThickness="0.1" Controls:TextBoxHelper.Watermark="Usuário" Controls:TextBoxHelper.UseFloatingWatermark="True"  Width="355" Background="#66000000"  Foreground="White" GotFocus="TxtUser_GotFocus"  LostFocus="TxtUser_LostFocus" KeyUp="TxtUser_KeyUp" TabIndex="1" FocusVisualStyle="{DynamicResource FocusStyle}" mah:TextBoxHelper.SelectAllOnFocus="True" mah:TextBoxHelper.ClearTextButton="True"/>
+                        </StackPanel>
+                          <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                            <iconPacks:PackIconBoxIcons Kind="SolidKey" Width="30" Height="30" Foreground="White" Margin="10" FontWeight="SemiBold" />
+                                <PasswordBox x:Name="txtPassword" FontFamily="Segoe UI" FontSize="26"  HorizontalAlignment="Stretch" BorderThickness="0.1" Controls:TextBoxHelper.Watermark="Senha" Controls:TextBoxHelper.UseFloatingWatermark="True"  Width="355" Background="#66000000"  Foreground="White" GotFocus="TxtPassword_GotFocus" LostFocus="TxtPassword_LostFocus" TabIndex="2" mah:TextBoxHelper.SelectAllOnFocus="True" mah:TextBoxHelper.ClearTextButton="True" Style="{DynamicResource MahApps.Styles.PasswordBox.Button.Revealed}"/>
+                                <Controls:ProgressRing x:Name="progressRing" IsActive="True" Height="40" Width="40" Margin="10 0 0 0" Foreground="#CCFFFFFF" />
+                            </StackPanel>
+                            <Button x:Name="btLogin" FontFamily="Segoe UI" IsEnabled="False" Command="{Binding LoginCommand}" BorderThickness="0.1"  FontSize="16" FontWeight="Medium" HorizontalAlignment="Stretch" MinHeight="45" MaxWidth="400" Margin="50 20 50 0" Background="#A500A8FF"  Click="Button_Click" TabIndex="3"  Style="{DynamicResource MahApps.Styles.Button.MetroSquare.Accent}">Login</Button>
+                            <TextBlock x:Name="lblEsqueceuSuaSenha" FontFamily="Segoe UI" MouseUp="lblEsqueceuSuaSenha_MouseUp" Margin="0 15 0 0" FontSize="16" Text="Esqueceu sua senha ?" HorizontalAlignment="Center" Foreground="#FFFFF300"></TextBlock>
+                            <StackPanel>
+                                <StackPanel.Triggers>
+                                    <EventTrigger RoutedEvent="StackPanel.Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard x:Name="aniBiometria" RepeatBehavior="Forever">
+                                                <DoubleAnimation Duration="0:0:1.5" From="0.2" To="0.8" AutoReverse="True" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="iconBiometria"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </StackPanel.Triggers>
+                            <iconPacks:PackIconFeatherIcons x:Name="iconBiometria" Kind="Radio" Foreground="DarkGray" Height="50" Width="50" HorizontalAlignment="Center" Margin="0 15 0 5">
+                                
+                            </iconPacks:PackIconFeatherIcons>
+                                <TextBlock Foreground="White" FontSize="11" HorizontalAlignment="Center" Opacity="0.2">Aproxime seu cartão no leitor para login automático</TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                        
+                </StackPanel>
+                </materialDesign:TransitioningContent>
+                <TextBlock Margin="5" FontSize="16" FontFamily="Segoe UI" VerticalAlignment="Bottom" HorizontalAlignment="Right" Foreground="White">Copyright ©  2020</TextBlock>
+                <Button x:Name="btPower" Margin="10" Background="Transparent" Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" BorderThickness="0" Click="btPower_Click">
+                    <Button.Content>
+                        <iconPacks:PackIconBoxIcons Foreground="White" Width="35" Height="35" Kind="RegularPowerOff" />
+                    </Button.Content>
+                </Button>
+            </Grid>
+        </Viewbox>
+        <Grid x:Name="virtualKeyboardGrid" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 250" MaxHeight="380" MaxWidth="800">
+
+            <Viewbox Height="auto" Width="auto">
+                <kbrd:Keyboard x:Name="Keyboard"  />
+            </Viewbox>
+        </Grid>
+    </Grid>
+    
+</Page>
