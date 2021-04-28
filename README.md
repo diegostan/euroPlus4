@@ -14,6 +14,7 @@ uma espécie de Framework para desenvolvimento rápido de aplicações industria
 * Subir dados para DB possibilitando o controle de variáveis de processo
 * Realizar a comunicação com controladores industriais e módulos de injeção eletrônica de veiculos
 * Utilizar PC's comum evitando gastos exorbitantes com interfaces proprietarias
+* Login de usuário usando tags RFID (28/04/21)
 
 ## Open Source
 * A ideia é difundir o euroPlus para qualquer desenvolvedor utilizar como base
