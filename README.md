@@ -1,5 +1,5 @@
 # euroPlus4 
-## O sistema com a conectividade em foco
+O sistema com a conectividade em foco
 ### Sistema de controle para máquinas industriais, casas inteligentes e veículos automotores.
 
 ## O que é o euroPlus ?
